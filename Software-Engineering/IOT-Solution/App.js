@@ -13,16 +13,19 @@ function Home({ navigation }){
     <View style={styles.container}>
         <View style={styles.lightContent}>
           <View style={styles.left}>
-            <MaterialCommunityIcons name="lamp" color={'black'} size={50} />
+            <MaterialCommunityIcons name="lamp" color={'red'} size={50} />
           </View>
           <View style={styles.right}>
-            <TouchableOpacity style={styles.buttonRegister} onPress = {() => navigation.navigate('Cadastro')} >
+            <TouchableOpacity style={styles.buttonRegister} onPress = {() => navigation.navigate(' ')} >
               <Text style={styles.textRegister}>Conectar Luz</Text>
             </TouchableOpacity>
           </View>
         </View>
 
-        <View>
+        <View style={styles.buttonContent}>
+          <Text style={styles.textDisclaimer}>
+            Clique no botao a baixo para mudar o estado da lampada.
+          </Text>
           <TouchableOpacity
             onPress={() => {
               setLampState(!lampState);
@@ -51,13 +54,38 @@ function Home({ navigation }){
 
 function Cadastro(){
   return(
-    <View style={styles.containerCadastro}>
-      <TextInput style={styles.input}
-        placeholder="8454-JKZ"
-      />
-      <TouchableOpacity style={styles.cadastrar}>
-        <Text>O</Text>
-      </TouchableOpacity>
+    <View style={styles.fullContainerCadastro}>
+    <Text style={styles.textRegister}> Conecte-se </Text>
+      <View style={styles.containerCadastro}>
+        <TextInput style={styles.input}
+          placeholder="Nome"
+        />
+        <TouchableOpacity style={styles.cadastrar}>
+          <Text>
+            <MaterialCommunityIcons name="account-circle" color={'red'} size={50} />
+          </Text>
+        </TouchableOpacity>
+      </View>
+      <View style={styles.containerCadastro}>
+        <TextInput style={styles.input}
+          placeholder="Senha"
+        />
+        <TouchableOpacity style={styles.cadastrar}>
+          <Text>
+            <MaterialCommunityIcons name="lock" color={'red'} size={50} />
+          </Text>
+        </TouchableOpacity>
+      </View>
+      <View style={styles.containerCadastro}>
+        <TextInput style={styles.input}
+          placeholder="IP-Lampada"
+        />
+        <TouchableOpacity style={styles.cadastrar}>
+          <Text>
+            <MaterialCommunityIcons name="arrow-right-drop-circle" color={'red'} size={50} />
+          </Text>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 }
@@ -68,8 +96,8 @@ export default function App() {
   return(
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name='Home' component={Home}/>
-        <Stack.Screen name='Cadastro' component={Cadastro}/>
+        <Stack.Screen name='' component={Home}/>
+        <Stack.Screen name=' ' component={Cadastro} />
       </Stack.Navigator>
     </NavigationContainer>
   );
@@ -108,7 +136,6 @@ const styles = StyleSheet.create({
   },
 
   buttonLightOn:{
-    marginTop:250,
     backgroundColor:'green',
     width:200,
     height:200,
@@ -124,7 +151,6 @@ const styles = StyleSheet.create({
   },
 
   buttonLightOff:{
-    marginTop:250,
     backgroundColor:'red',
     width:200,
     height:200,
@@ -142,16 +168,41 @@ const styles = StyleSheet.create({
   lightContent:{
     width: '70%',
     flexDirection: 'row',
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
+    paddingBottom: 20,
   },
 
-  containerCadastro:{
+  buttonContent:{
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'gray',
+    backgroundColor: '#3F3E3E',
+    width: '100%',
+    borderRadius: 50
+  },
+
+  textDisclaimer:{
+    fontWeight: 'bold',
+    fontSize: 20,
+    textAlign: 'center',
+    marginBottom: 20,
+    color: '#fff'
+  },
+
+  containerCadastro:{
+    justifyContent: 'center',
+    alignItems: 'center',
     flexDirection: 'row'
   },
+
+  fullContainerCadastro:{
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexDirection: 'column',
+    backgroundColor: 'gray',
+  },
+  
   input:{
     width:"70%",
     borderRadius: 10,
