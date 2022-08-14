@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "vEJiBOYMRgIIefE7RV5Vv9tOQza/8AiGitIfMHf2KewKZzFebaFOKNWfs4dDZgxVOoWymubSnmn4owzf8NugOA==",
+  "success": true,
+  "projectFilePath": "/home/jho/Documentos/UENP/Compilador/Jhonatan/compiler/compiler.csproj",
+  "expectedPackageFiles": [
+    "/home/jho/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.8/microsoft.aspnetcore.app.ref.6.0.8.nupkg.sha512"
+  ],
+  "logs": []
+}
