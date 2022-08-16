@@ -1,0 +1,7 @@
+As compras de passagens online são uma realidade. Considere um ônibus com 20 lugares
+(para simplificar, existe somente um ônibus e um horário). Vários usuários podem consultar
+os lugares disponíveis para decidir se compram ou não uma passagem. Após consultar,
+decidem se compram ou abandonam a consulta. Para comprar, o usuário informa o número
+da poltrona. Evidentemente, um lugar no ônibus não pode ser vendido para duas pessoas...
+Implemente um programa multithreading para simular a consulta e venda de passagens.
+Simule várias pessoas tentando comprar passagens ao mesmo tempo.

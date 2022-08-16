@@ -1,0 +1,5 @@
+Caso 2
+Crie um programa que, dado um diretório, some a quantidade de bytes de cada arquivo.
+Como em um diretório pode haver subdiretórios, este problema pode ser facilmente
+resolvido com recursão. Utilize, obrigatoriamente, alguma solução paralela.
+Compare o tempo de execução da versão da versão paralela com a versão convencional.
