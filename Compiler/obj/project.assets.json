@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/jho/Documentos/UENP/Compilador/Jhonatan/compiler/compiler.csproj",
+      "projectUniqueName": "/home/jho/Documentos/UENP/GitHub/Colleg-UENP-1/Compiler/compiler.csproj",
       "projectName": "compiler",
-      "projectPath": "/home/jho/Documentos/UENP/Compilador/Jhonatan/compiler/compiler.csproj",
+      "projectPath": "/home/jho/Documentos/UENP/GitHub/Colleg-UENP-1/Compiler/compiler.csproj",
       "packagesPath": "/home/jho/.nuget/packages/",
-      "outputPath": "/home/jho/Documentos/UENP/Compilador/Jhonatan/compiler/obj/",
+      "outputPath": "/home/jho/Documentos/UENP/GitHub/Colleg-UENP-1/Compiler/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/jho/.nuget/NuGet/NuGet.Config"

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "vEJiBOYMRgIIefE7RV5Vv9tOQza/8AiGitIfMHf2KewKZzFebaFOKNWfs4dDZgxVOoWymubSnmn4owzf8NugOA==",
+  "dgSpecHash": "qz4eHVZo9/FUYKzfTPmxEgueA58EUIMnWsh8p+gCzalHkkpmkJH0krNTvoySBtam9ndqvBeK72RV+5c0mihQIA==",
   "success": true,
-  "projectFilePath": "/home/jho/Documentos/UENP/Compilador/Jhonatan/compiler/compiler.csproj",
+  "projectFilePath": "/home/jho/Documentos/UENP/GitHub/Colleg-UENP-1/Compiler/compiler.csproj",
   "expectedPackageFiles": [
     "/home/jho/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.8/microsoft.aspnetcore.app.ref.6.0.8.nupkg.sha512"
   ],
