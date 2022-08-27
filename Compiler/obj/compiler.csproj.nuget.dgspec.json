@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/jho/Documentos/UENP/GitHub/Colleg-UENP-1/Compiler/compiler.csproj": {}
+    "/home/jho/Documentos/UENP/Git/Git/Colleg-UENP/Compiler/compiler.csproj": {}
   },
   "projects": {
-    "/home/jho/Documentos/UENP/GitHub/Colleg-UENP-1/Compiler/compiler.csproj": {
+    "/home/jho/Documentos/UENP/Git/Git/Colleg-UENP/Compiler/compiler.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/jho/Documentos/UENP/GitHub/Colleg-UENP-1/Compiler/compiler.csproj",
+        "projectUniqueName": "/home/jho/Documentos/UENP/Git/Git/Colleg-UENP/Compiler/compiler.csproj",
         "projectName": "compiler",
-        "projectPath": "/home/jho/Documentos/UENP/GitHub/Colleg-UENP-1/Compiler/compiler.csproj",
+        "projectPath": "/home/jho/Documentos/UENP/Git/Git/Colleg-UENP/Compiler/compiler.csproj",
         "packagesPath": "/home/jho/.nuget/packages/",
-        "outputPath": "/home/jho/Documentos/UENP/GitHub/Colleg-UENP-1/Compiler/obj/",
+        "outputPath": "/home/jho/Documentos/UENP/Git/Git/Colleg-UENP/Compiler/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/jho/.nuget/NuGet/NuGet.Config"

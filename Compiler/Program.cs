@@ -4,13 +4,14 @@ namespace vsi
 {
     public enum ETokenType 
     {
-        SUM, SUB, MULT, DIV, OPEN, CLOSE, NUM, EOF, VAR, ATB, NAM
+        SUM, SUB, MULT, DIV, OPEN, CLOSE, NUM, EOF, VAR, ATB, NAM, EOL
     }
 
     public class Token
     {
         public ETokenType Type {get;set;}
         public Int32 Value {get;set;}
+        
 
         public Token(ETokenType type, Int32 value = 0)
         {
@@ -50,9 +51,22 @@ namespace vsi
                 case ')': return new Token(ETokenType.CLOSE);
                 case '$': return new Token(ETokenType.VAR);
                 case '=': return new Token(ETokenType.ATB);
+                case '\n': return new Token(ETokenType.ATB);
             }
             if (Char.IsDigit(peek.Value))
-                return new Token(ETokenType.NUM, Int32.Parse(peek.ToString()));
+            {
+                Console.WriteLine(peek.Value);
+                
+                string number = "";
+                while(peek.Value != ' ')
+                {
+                    number = number + peek.Value;
+                    _position++;
+                    peek = _input[_position];
+                }
+                int x = GetValue(number);
+                return new Token(ETokenType.NUM, x);
+            }
            
             Error("(" + _lookahead.Type + ")" +" Erro Léxico");
             return new Token(ETokenType.EOF);
@@ -61,21 +75,15 @@ namespace vsi
         static Token VariableNextToken()
         {
             var nameVar = "";
-            _position++;
-            if (_position < _input.Length)
+            
+            while(!_lookahead.Equals(" ")){
+                _position++;
                 peek = _input[_position];
-            else
-                return new Token(ETokenType.EOF);
-            //switch (peek){
-            /*if ( peek != '=') 
-                return new Token(ETokenType.NAM);*/
-            if ( peek == '=')
-                //nameVar.Append(peek.Value);
-                return new Token(ETokenType.ATB);
-            if (Char.IsDigit(peek.Value))
-                return new Token(ETokenType.NUM, Int32.Parse(peek.ToString()));
-            //}
-            Error("(" + _lookahead.Value + ")" +" Erro Léxico");
+                nameVar += peek;
+                return new Token(ETokenType.NAM);
+            }
+
+            Error("(" + _lookahead.Type + ")" +" Erro Léxico");
             return new Token(ETokenType.EOF);
         }
 
@@ -135,18 +143,26 @@ namespace vsi
             else if (_lookahead.Type == ETokenType.VAR)
             {
                 _lookahead = VariableNextToken();
+                return 0;
             }
-            else if (_lookahead.Type == ETokenType.NAM)
-            {
-                _lookahead = VariableNextToken();
-            }
-            else if (_lookahead.Type == ETokenType.ATB)
+
+            else if(_lookahead.Type == ETokenType.NAM)
             {
                 _lookahead = NextToken();
-            }  
+                T();
+                return 0;
+            }
+
+            else if(_lookahead.Type == ETokenType.ATB)
+            {
+                _lookahead = NextToken();
+                T();
+                return 0;
+            }
+
             else if ((_lookahead.Type != ETokenType.EOF) && (_lookahead.Type != ETokenType.CLOSE))
             {
-               Error("(" + _lookahead+ ")" + "Símbolo inesperado em R");
+               Error("(" + _lookahead.GetHashCode() + ")" + "Símbolo inesperado em R");
             }
             return t;
         }        
@@ -170,13 +186,35 @@ namespace vsi
             {
                 _lookahead = VariableNextToken();
                 return 0;
-            }   
+            }
+
+            else if(_lookahead.Type == ETokenType.NAM)
+            {
+                _lookahead = NextToken();
+                return 0;
+            }
+
+            else if(_lookahead.Type == ETokenType.ATB)
+            {
+                _lookahead = NextToken();
+                return 0;
+            }
+
             else  
             {
                 Error("(" + _lookahead.Value+ ")" + " Símbolo inesperado em T, use $ para variavies.");
                 
             }
             return 0;
+        }
+
+        static int GetValue(string c){
+            int i = 0;
+            while(i != Int32.Parse(c.ToString()))
+            {
+                i++;
+            }
+            return i;
         }
 
 
