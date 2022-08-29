@@ -22,7 +22,7 @@ namespace vsi
 
     public class Program
     {
-        static string _input;
+        static string _input = "";
         static int _position = -1;
         static Token _lookahead;
 
@@ -51,24 +51,24 @@ namespace vsi
                 case ')': return new Token(ETokenType.CLOSE);
                 case '$': return new Token(ETokenType.VAR);
                 case '=': return new Token(ETokenType.ATB);
-                case '\n': return new Token(ETokenType.ATB);
+                case '\n': return new Token(ETokenType.EOL);
             }
             if (Char.IsDigit(peek.Value))
-            {
-                Console.WriteLine(peek.Value);
-                
+            {   
                 string number = "";
+                //while(peek.Value != ' ')
                 while(peek.Value != ' ')
                 {
                     number = number + peek.Value;
                     _position++;
                     peek = _input[_position];
+                    //_lookahead = NextToken();
                 }
                 int x = GetValue(number);
                 return new Token(ETokenType.NUM, x);
             }
            
-            Error("(" + _lookahead.Type + ")" +" Erro Léxico");
+            Error("( -> " + peek + " <- )" +" Erro Léxico use $[a-z]+ para variaveis");
             return new Token(ETokenType.EOF);
         }
 
@@ -76,10 +76,11 @@ namespace vsi
         {
             var nameVar = "";
             
-            while(!_lookahead.Equals(" ")){
+            while(!_lookahead.Equals(" ") || !_lookahead.Equals("")){
                 _position++;
                 peek = _input[_position];
                 nameVar += peek;
+                _lookahead = NextToken();
                 return new Token(ETokenType.NAM);
             }
 
@@ -91,7 +92,8 @@ namespace vsi
         {           
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("Erro! "+ message);
-            Console.WriteLine(_input);
+            Console.Write(_input);
+            Console.WriteLine(" Operacao inválida!");
             Console.ResetColor();            
             Environment.Exit(0);
             
@@ -103,7 +105,7 @@ namespace vsi
             if (_lookahead.Type == type)
                 _lookahead = NextToken();
             else
-                Error("(" + _lookahead+ ")" + " É um Token inválido");
+                Error("( -> " + peek + " <- )" +" É um Token inválido");
         }
 
         static int E()
@@ -143,26 +145,28 @@ namespace vsi
             else if (_lookahead.Type == ETokenType.VAR)
             {
                 _lookahead = VariableNextToken();
-                return 0;
+                var res = E();
+                return res;
             }
 
             else if(_lookahead.Type == ETokenType.NAM)
             {
                 _lookahead = NextToken();
-                T();
-                return 0;
+                var res = E();
+                return res;
             }
 
             else if(_lookahead.Type == ETokenType.ATB)
             {
+                Match(ETokenType.ATB);
                 _lookahead = NextToken();
-                T();
-                return 0;
+                var res = E();
+                return res;
             }
 
             else if ((_lookahead.Type != ETokenType.EOF) && (_lookahead.Type != ETokenType.CLOSE))
             {
-               Error("(" + _lookahead.GetHashCode() + ")" + "Símbolo inesperado em R");
+               Error("( -> " + peek + " <- )" + "Símbolo inesperado!");
             }
             return t;
         }        
@@ -196,13 +200,15 @@ namespace vsi
 
             else if(_lookahead.Type == ETokenType.ATB)
             {
+                Match(ETokenType.ATB);
                 _lookahead = NextToken();
-                return 0;
+                var res = E();
+                return res;
             }
 
             else  
             {
-                Error("(" + _lookahead.Value+ ")" + " Símbolo inesperado em T, use $ para variavies.");
+                Error("( -> " + peek + " <- )" +" Símbolo inesperado!");
                 
             }
             return 0;
@@ -217,6 +223,19 @@ namespace vsi
             return i;
         }
 
+    
+        static private bool testSufix(String suffix){
+            var res = true;
+            suffix.ToCharArray().ToList().ForEach(c => {
+                _lookahead = NextToken();
+                if (peek != c){
+                    res = false;
+                    return;
+                }
+            });
+            peek = null;
+            return res;
+        }
 
         public static void Main(string[] args)
         {     
@@ -225,7 +244,7 @@ namespace vsi
             Console.WriteLine(_input);
             _lookahead = NextToken();
             var res = E();
-            Console.WriteLine("Sucesso no execucao");
+            Console.WriteLine("Sucesso na execucao!");
             Console.WriteLine("O resultado final foi: "+ res);
         }
     }
