@@ -4,7 +4,7 @@ namespace vsi
 {
     public enum ETokenType 
     {
-        SUM, SUB, MULT, DIV, OPEN, CLOSE, NUM, EOF, VAR, ATB, NAM
+        SUM, SUB, MULT, DIV, OPEN, CLOSE, NUM, EOF, VAR, ATB, NAM, EOO
     }
 
     public class Token
@@ -36,7 +36,7 @@ namespace vsi
                 peek = _input[_position];
             else
                 return new Token(ETokenType.EOF);
-            while(peek == ' ' || peek == '\t')
+            while(peek == ' ' || peek == '\t' || peek == ';')
             {
                 _position++;
                 peek = _input[_position];
@@ -51,11 +51,12 @@ namespace vsi
                 case ')': return new Token(ETokenType.CLOSE);
                 case '$': return new Token(ETokenType.VAR);
                 case '=': return new Token(ETokenType.ATB);
+                case ';': return new Token(ETokenType.EOO);
             }
             if (Char.IsDigit(peek.Value))
             {   
                 string number = "";
-                while(peek.Value != ' ')
+                while(Char.IsDigit(peek.Value))
                 {
                     number = number + peek.Value;
                     _position++;
@@ -72,8 +73,8 @@ namespace vsi
         static Token VariableNextToken()
         {
             var nameVar = "";
-            
-            while(!_lookahead.Equals(" ") || !_lookahead.Equals("")){
+            while(!_lookahead.Equals(" ") || !_lookahead.Equals(ETokenType.EOO) || !_lookahead.Equals(ETokenType.SUM) || !_lookahead.Equals(ETokenType.SUB) || !_lookahead.Equals(ETokenType.DIV) || !_lookahead.Equals(ETokenType.MULT))
+            {
                 _position++;
                 peek = _input[_position];
                 nameVar += peek;
@@ -153,12 +154,17 @@ namespace vsi
                 return res;
             }
 
-            else if(_lookahead.Type == ETokenType.ATB)
+            else if(_lookahead.Type == ETokenType.EOO)
             {
-                Match(ETokenType.ATB);
                 _lookahead = NextToken();
                 var res = E();
                 return res;
+            }
+
+            else if(_lookahead.Type == ETokenType.ATB)
+            {
+                _lookahead = NextToken();
+                return 0;
             }
 
             else if ((_lookahead.Type != ETokenType.EOF) && (_lookahead.Type != ETokenType.CLOSE))
@@ -195,9 +201,14 @@ namespace vsi
                 return 0;
             }
 
+            else if(_lookahead.Type == ETokenType.EOO)
+            {
+                _lookahead = NextToken();
+                return 0;
+            }
+
             else if(_lookahead.Type == ETokenType.ATB)
             {
-                Match(ETokenType.ATB);
                 _lookahead = NextToken();
                 var res = E();
                 return res;
