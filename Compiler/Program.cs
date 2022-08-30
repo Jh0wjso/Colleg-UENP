@@ -4,7 +4,7 @@ namespace vsi
 {
     public enum ETokenType 
     {
-        SUM, SUB, MULT, DIV, OPEN, CLOSE, NUM, EOF, VAR, ATB, NAM, EOL
+        SUM, SUB, MULT, DIV, OPEN, CLOSE, NUM, EOF, VAR, ATB, NAM
     }
 
     public class Token
@@ -51,18 +51,15 @@ namespace vsi
                 case ')': return new Token(ETokenType.CLOSE);
                 case '$': return new Token(ETokenType.VAR);
                 case '=': return new Token(ETokenType.ATB);
-                case '\n': return new Token(ETokenType.EOL);
             }
             if (Char.IsDigit(peek.Value))
             {   
                 string number = "";
-                //while(peek.Value != ' ')
                 while(peek.Value != ' ')
                 {
                     number = number + peek.Value;
                     _position++;
                     peek = _input[_position];
-                    //_lookahead = NextToken();
                 }
                 int x = GetValue(number);
                 return new Token(ETokenType.NUM, x);
@@ -166,7 +163,7 @@ namespace vsi
 
             else if ((_lookahead.Type != ETokenType.EOF) && (_lookahead.Type != ETokenType.CLOSE))
             {
-               Error("( -> " + peek + " <- )" + "Símbolo inesperado!");
+               Error("( -> '" + peek + "' <- )" + "Símbolo inesperado!");
             }
             return t;
         }        
@@ -208,7 +205,7 @@ namespace vsi
 
             else  
             {
-                Error("( -> " + peek + " <- )" +" Símbolo inesperado!");
+                Error("( -> '" + peek + "' <- )" +" Símbolo inesperado!");
                 
             }
             return 0;
