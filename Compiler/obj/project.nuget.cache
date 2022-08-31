@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "LCYYD0zl06FIL1B5nPq/4gAn7S3PqboPrznsS4shCVra5U8YBHAOnWt8QPZ5NCK3j2K4leugvHYyxCr+3kS6QQ==",
+  "dgSpecHash": "VC1WvGgf/IiuxwbDAhTNW+qARY9UigWJD7v2fTzSXOHysCk8UZI+XViBaqjtny5R1fXTMRgISyghzTh0gY/Taw==",
   "success": true,
-  "projectFilePath": "/home/jho/Documentos/UENP/Git/Git/Colleg-UENP/Compiler/compiler.csproj",
+  "projectFilePath": "/home/jho/Documentos/UENP/Git/Git/Colleg-UENP/Compiler/very-simple-interpreter.csproj",
   "expectedPackageFiles": [
     "/home/jho/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.8/microsoft.aspnetcore.app.ref.6.0.8.nupkg.sha512"
   ],
