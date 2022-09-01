@@ -75,7 +75,6 @@ namespace VerySimpleInterpreter.Parser
             Console.WriteLine("-----------------------------------------");
             Console.WriteLine("\t|"+_symbolTable.Get(_lookAhead.Value.Value)+"|");
             Console.WriteLine("-----------------------------------------");
-            Match(ETokenType.VAR);
         }
 
         public void Atrib() // atrib  : VAR AT expr
@@ -167,8 +166,6 @@ namespace VerySimpleInterpreter.Parser
                 Match(ETokenType.CE);
                 return e;
             }
-            else
-                Error("ESPERADO NUM, VAR or OE");
             return 0;
         }
 
