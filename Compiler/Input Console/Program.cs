@@ -221,20 +221,6 @@ namespace vsi
             return i;
         }
 
-    
-        static private bool testSufix(String suffix){
-            var res = true;
-            suffix.ToCharArray().ToList().ForEach(c => {
-                _lookahead = NextToken();
-                if (peek != c){
-                    res = false;
-                    return;
-                }
-            });
-            peek = null;
-            return res;
-        }
-
         public static void Main(string[] args)
         {     
             Console.WriteLine("Insira a expressão desejada:");
