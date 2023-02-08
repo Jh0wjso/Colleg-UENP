@@ -1,0 +1,20 @@
+.containerContent{
+    @apply flex flex-col items-center justify-center w-[100%] border-t-2;
+}
+
+.dropDown{
+    @apply text-center my-5;
+}
+
+.name{
+    @apply text-2xl;
+}
+
+.selectContent{
+    @apply p-2 text-black m-5 p-3 rounded;
+}
+
+.btnSend{
+    @apply bg-orange-400 p-3 rounded;
+    @apply hover:bg-orange-600;
+}
