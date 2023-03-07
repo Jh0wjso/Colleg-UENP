@@ -20,7 +20,7 @@ A Linguagem foi criada usando Xtext, que é
 
 Pasta que armazena toda a estutura por trás do compilador o qual foi criado usando xText.
 
-O projeto possui cincon principais projetos, porémo que iremos alterar é somente o inicial, localizado em br.compiladores.jhonatan.jlanguage, na pasta *src* temos o arquivo chamado Jlanguage.xtex, que é onde se localiza a gramática da linguagem, a baixo segue a gramática ultlizada:
+O projeto possui cinco principais projetos, porém o que iremos alterar é somente o inicial, localizado em br.compiladores.jhonatan.jlanguage, na pasta *src* temos o arquivo chamado Jlanguage.xtex, que é onde se localiza a gramática da linguagem, a baixo segue a gramática ultlizada:
 
 ```
 grammar br.compiladores.jhonatan.jlanguage.Jlanguage with org.eclipse.xtext.common.Terminals
@@ -329,8 +329,8 @@ O programa está em sua primeira versão completa, a Versão 1.0.
 
 ---
 
-
-
 ## 🔔 Notas
 
-O projeto foi desenvolvido a partir do curso de compiladores da UFSCar, link do curso, [Clique Aqui](https://www.youtube.com/playlist?list=PLaPmgS59eMSEKNRIBxuBK4mJr-8pFP3lW).
+O projeto foi desenvolvido para a disciplina de Compiladores, na Universidade Estadual do Norte do Paraná.
+
+O projeto foi desenvolvido a partir do curso de Contrução de Compiladores da UFSCar, link do curso, [Clique Aqui](https://www.youtube.com/playlist?list=PLaPmgS59eMSEKNRIBxuBK4mJr-8pFP3lW).
