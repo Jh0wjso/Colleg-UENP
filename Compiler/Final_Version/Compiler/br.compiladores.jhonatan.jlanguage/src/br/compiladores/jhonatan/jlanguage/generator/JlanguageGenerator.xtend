@@ -12,6 +12,7 @@ import br.compiladores.jhonatan.jlanguage.jlanguage.Declaracao
 import br.compiladores.jhonatan.jlanguage.jlanguage.ComandoAtibuicao
 import br.compiladores.jhonatan.jlanguage.jlanguage.ComandoEntrada
 import br.compiladores.jhonatan.jlanguage.jlanguage.ComandoSaida
+import br.compiladores.jhonatan.jlanguage.jlanguage.Funcao
 import br.compiladores.jhonatan.jlanguage.jlanguage.ComandoCondicao
 import br.compiladores.jhonatan.jlanguage.jlanguage.ComandoRepeticao
 import br.compiladores.jhonatan.jlanguage.jlanguage.ComandoSubAlgoritmo
@@ -54,6 +55,8 @@ class JlanguageGenerator extends AbstractGenerator {
 	
 	def getTipo(Declaracao d){
 		if(d.tipo == "REAL") return "double";
+		if(d.tipo == "TEXTO") return "string";
+		if(d.tipo == "BOOLEANO") return "boolean";
 		return "int";
 	}
 	
@@ -66,6 +69,10 @@ class JlanguageGenerator extends AbstractGenerator {
 			«c.variavel.name» = Integer.parseInt(System.console().readLine());
 		«ELSEIF c.variavel.tipo == "REAL"»
 			«c.variavel.name» = Double.parseDouble(System.console().readLine());
+		«ELSEIF c.variavel.tipo == "TEXTO"»
+			«c.variavel.name» = System.console().readLine();
+		«ELSEIF c.variavel.tipo == "BOOLEANO"»
+			«c.variavel.name» = Boolean.parseBoolean(System.console().readLine());
 		«ENDIF»
 	'''
 	
@@ -147,5 +154,4 @@ class JlanguageGenerator extends AbstractGenerator {
 		else if(s == "<>") return "!=" 
 		else if(s == "=") return "=="
 	}
-
 }

@@ -99,6 +99,16 @@ public class JlanguageGenerator extends AbstractGenerator {
     if (_equals) {
       return "double";
     }
+    String _tipo_1 = d.getTipo();
+    boolean _equals_1 = Objects.equal(_tipo_1, "TEXTO");
+    if (_equals_1) {
+      return "string";
+    }
+    String _tipo_2 = d.getTipo();
+    boolean _equals_2 = Objects.equal(_tipo_2, "BOOLEANO");
+    if (_equals_2) {
+      return "boolean";
+    }
     return "int";
   }
 
@@ -132,6 +142,24 @@ public class JlanguageGenerator extends AbstractGenerator {
           _builder.append(_name_1);
           _builder.append(" = Double.parseDouble(System.console().readLine());");
           _builder.newLineIfNotEmpty();
+        } else {
+          String _tipo_2 = c.getVariavel().getTipo();
+          boolean _equals_2 = Objects.equal(_tipo_2, "TEXTO");
+          if (_equals_2) {
+            String _name_2 = c.getVariavel().getName();
+            _builder.append(_name_2);
+            _builder.append(" = System.console().readLine();");
+            _builder.newLineIfNotEmpty();
+          } else {
+            String _tipo_3 = c.getVariavel().getTipo();
+            boolean _equals_3 = Objects.equal(_tipo_3, "BOOLEANO");
+            if (_equals_3) {
+              String _name_3 = c.getVariavel().getName();
+              _builder.append(_name_3);
+              _builder.append(" = Boolean.parseBoolean(System.console().readLine());");
+              _builder.newLineIfNotEmpty();
+            }
+          }
         }
       }
     }

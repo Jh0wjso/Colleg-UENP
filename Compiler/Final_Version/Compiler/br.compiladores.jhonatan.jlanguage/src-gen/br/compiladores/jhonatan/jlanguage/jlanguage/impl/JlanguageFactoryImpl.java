@@ -87,6 +87,8 @@ public class JlanguageFactoryImpl extends EFactoryImpl implements JlanguageFacto
       case JlanguagePackage.COMANDO_CONDICAO: return createComandoCondicao();
       case JlanguagePackage.COMANDO_REPETICAO: return createComandoRepeticao();
       case JlanguagePackage.COMANDO_SUB_ALGORITMO: return createComandoSubAlgoritmo();
+      case JlanguagePackage.CHAMADA_FUNCAO: return createChamadaFuncao();
+      case JlanguagePackage.FUNCAO: return createFuncao();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -354,6 +356,30 @@ public class JlanguageFactoryImpl extends EFactoryImpl implements JlanguageFacto
   {
     ComandoSubAlgoritmoImpl comandoSubAlgoritmo = new ComandoSubAlgoritmoImpl();
     return comandoSubAlgoritmo;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ChamadaFuncao createChamadaFuncao()
+  {
+    ChamadaFuncaoImpl chamadaFuncao = new ChamadaFuncaoImpl();
+    return chamadaFuncao;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Funcao createFuncao()
+  {
+    FuncaoImpl funcao = new FuncaoImpl();
+    return funcao;
   }
 
   /**

@@ -80,5 +80,15 @@
     <genClasses ecoreClass="Jlanguage.ecore#//ComandoSubAlgoritmo">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Jlanguage.ecore#//ComandoSubAlgoritmo/comandos"/>
     </genClasses>
+    <genClasses ecoreClass="Jlanguage.ecore#//ChamadaFuncao">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Jlanguage.ecore#//ChamadaFuncao/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Jlanguage.ecore#//ChamadaFuncao/argumentos"/>
+    </genClasses>
+    <genClasses ecoreClass="Jlanguage.ecore#//Funcao">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Jlanguage.ecore#//Funcao/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Jlanguage.ecore#//Funcao/parametros"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Jlanguage.ecore#//Funcao/tipo"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Jlanguage.ecore#//Funcao/comandos"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>

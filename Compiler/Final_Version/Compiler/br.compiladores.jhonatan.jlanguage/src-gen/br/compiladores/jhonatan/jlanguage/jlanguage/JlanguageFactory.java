@@ -222,6 +222,24 @@ public interface JlanguageFactory extends EFactory
   ComandoSubAlgoritmo createComandoSubAlgoritmo();
 
   /**
+   * Returns a new object of class '<em>Chamada Funcao</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Chamada Funcao</em>'.
+   * @generated
+   */
+  ChamadaFuncao createChamadaFuncao();
+
+  /**
+   * Returns a new object of class '<em>Funcao</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Funcao</em>'.
+   * @generated
+   */
+  Funcao createFuncao();
+
+  /**
    * Returns the package supported by this factory.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

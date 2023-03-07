@@ -3,6 +3,7 @@
  */
 package br.compiladores.jhonatan.jlanguage.serializer;
 
+import br.compiladores.jhonatan.jlanguage.jlanguage.ChamadaFuncao;
 import br.compiladores.jhonatan.jlanguage.jlanguage.ComandoAtibuicao;
 import br.compiladores.jhonatan.jlanguage.jlanguage.ComandoCondicao;
 import br.compiladores.jhonatan.jlanguage.jlanguage.ComandoEntrada;
@@ -15,6 +16,7 @@ import br.compiladores.jhonatan.jlanguage.jlanguage.ExpressaoRelacional;
 import br.compiladores.jhonatan.jlanguage.jlanguage.FatorNumero;
 import br.compiladores.jhonatan.jlanguage.jlanguage.FatorSubExpressao;
 import br.compiladores.jhonatan.jlanguage.jlanguage.FatorVariavel;
+import br.compiladores.jhonatan.jlanguage.jlanguage.Funcao;
 import br.compiladores.jhonatan.jlanguage.jlanguage.JlanguagePackage;
 import br.compiladores.jhonatan.jlanguage.jlanguage.OutroFatorAritmetico;
 import br.compiladores.jhonatan.jlanguage.jlanguage.OutroTermoAritmetico;
@@ -50,6 +52,9 @@ public class JlanguageSemanticSequencer extends AbstractDelegatingSemanticSequen
 		Set<Parameter> parameters = context.getEnabledBooleanParameters();
 		if (epackage == JlanguagePackage.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
+			case JlanguagePackage.CHAMADA_FUNCAO:
+				sequence_ChamadaFuncao(context, (ChamadaFuncao) semanticObject); 
+				return; 
 			case JlanguagePackage.COMANDO_ATIBUICAO:
 				sequence_ComandoAtibuicao(context, (ComandoAtibuicao) semanticObject); 
 				return; 
@@ -86,6 +91,9 @@ public class JlanguageSemanticSequencer extends AbstractDelegatingSemanticSequen
 			case JlanguagePackage.FATOR_VARIAVEL:
 				sequence_FatorVariavel(context, (FatorVariavel) semanticObject); 
 				return; 
+			case JlanguagePackage.FUNCAO:
+				sequence_Funcao(context, (Funcao) semanticObject); 
+				return; 
 			case JlanguagePackage.OUTRO_FATOR_ARITMETICO:
 				sequence_OutroFatorAritmetico(context, (OutroFatorAritmetico) semanticObject); 
 				return; 
@@ -111,6 +119,20 @@ public class JlanguageSemanticSequencer extends AbstractDelegatingSemanticSequen
 		if (errorAcceptor != null)
 			errorAcceptor.accept(diagnosticProvider.createInvalidContextOrTypeDiagnostic(semanticObject, context));
 	}
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     ChamadaFuncao returns ChamadaFuncao
+	 *
+	 * Constraint:
+	 *     (name=ID (argumentos+=ExpressaoAritmetica argumentos+=ExpressaoAritmetica*)?)
+	 * </pre>
+	 */
+	protected void sequence_ChamadaFuncao(ISerializationContext context, ChamadaFuncao semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
 	
 	/**
 	 * <pre>
@@ -343,6 +365,20 @@ public class JlanguageSemanticSequencer extends AbstractDelegatingSemanticSequen
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getFatorVariavelAccess().getVariavelDeclaracaoIDTerminalRuleCall_0_1(), semanticObject.eGet(JlanguagePackage.Literals.FATOR_VARIAVEL__VARIAVEL, false));
 		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Funcao returns Funcao
+	 *
+	 * Constraint:
+	 *     (name=ID (parametros+=Declaracao parametros+=Declaracao*)? tipo=TipoVar comandos=Comando)
+	 * </pre>
+	 */
+	protected void sequence_Funcao(ISerializationContext context, Funcao semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

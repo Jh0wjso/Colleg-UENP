@@ -80,9 +80,9 @@ rulePrograma returns [EObject current=null]
 		{
 			newLeafNode(otherlv_0, grammarAccess.getProgramaAccess().getColonKeyword_0());
 		}
-		otherlv_1='DECLARACOES'
+		otherlv_1='VARIAVEIS'
 		{
-			newLeafNode(otherlv_1, grammarAccess.getProgramaAccess().getDECLARACOESKeyword_1());
+			newLeafNode(otherlv_1, grammarAccess.getProgramaAccess().getVARIAVEISKeyword_1());
 		}
 		(
 			(
@@ -107,9 +107,9 @@ rulePrograma returns [EObject current=null]
 		{
 			newLeafNode(otherlv_3, grammarAccess.getProgramaAccess().getColonKeyword_3());
 		}
-		otherlv_4='ALGORITMO'
+		otherlv_4='CODIGO'
 		{
-			newLeafNode(otherlv_4, grammarAccess.getProgramaAccess().getALGORITMOKeyword_4());
+			newLeafNode(otherlv_4, grammarAccess.getProgramaAccess().getCODIGOKeyword_4());
 		}
 		(
 			(
@@ -996,9 +996,9 @@ ruleComandoEntrada returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='LER'
+		otherlv_0='LEIA'
 		{
-			newLeafNode(otherlv_0, grammarAccess.getComandoEntradaAccess().getLERKeyword_0());
+			newLeafNode(otherlv_0, grammarAccess.getComandoEntradaAccess().getLEIAKeyword_0());
 		}
 		(
 			(
@@ -1032,9 +1032,9 @@ ruleComandoSaida returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='IMPRIMIR'
+		otherlv_0='PRINT'
 		{
-			newLeafNode(otherlv_0, grammarAccess.getComandoSaidaAccess().getIMPRIMIRKeyword_0());
+			newLeafNode(otherlv_0, grammarAccess.getComandoSaidaAccess().getPRINTKeyword_0());
 		}
 		(
 			(
@@ -1275,6 +1275,18 @@ ruleTipoVar returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()
 		{
 			$current.merge(kw);
 			newLeafNode(kw, grammarAccess.getTipoVarAccess().getREALKeyword_1());
+		}
+		    |
+		kw='TEXTO'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getTipoVarAccess().getTEXTOKeyword_2());
+		}
+		    |
+		kw='BOOLEANO'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getTipoVarAccess().getBOOLEANOKeyword_3());
 		}
 	)
 ;

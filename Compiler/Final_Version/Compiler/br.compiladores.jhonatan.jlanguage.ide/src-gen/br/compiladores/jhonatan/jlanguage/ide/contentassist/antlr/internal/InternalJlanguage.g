@@ -833,6 +833,18 @@ rule__TipoVar__Alternatives
 		'REAL'
 		{ after(grammarAccess.getTipoVarAccess().getREALKeyword_1()); }
 	)
+	|
+	(
+		{ before(grammarAccess.getTipoVarAccess().getTEXTOKeyword_2()); }
+		'TEXTO'
+		{ after(grammarAccess.getTipoVarAccess().getTEXTOKeyword_2()); }
+	)
+	|
+	(
+		{ before(grammarAccess.getTipoVarAccess().getBOOLEANOKeyword_3()); }
+		'BOOLEANO'
+		{ after(grammarAccess.getTipoVarAccess().getBOOLEANOKeyword_3()); }
+	)
 ;
 finally {
 	restoreStackSize(stackSize);
@@ -991,9 +1003,9 @@ rule__Programa__Group__1__Impl
 	}
 :
 (
-	{ before(grammarAccess.getProgramaAccess().getDECLARACOESKeyword_1()); }
-	'DECLARACOES'
-	{ after(grammarAccess.getProgramaAccess().getDECLARACOESKeyword_1()); }
+	{ before(grammarAccess.getProgramaAccess().getVARIAVEISKeyword_1()); }
+	'VARIAVEIS'
+	{ after(grammarAccess.getProgramaAccess().getVARIAVEISKeyword_1()); }
 )
 ;
 finally {
@@ -1079,9 +1091,9 @@ rule__Programa__Group__4__Impl
 	}
 :
 (
-	{ before(grammarAccess.getProgramaAccess().getALGORITMOKeyword_4()); }
-	'ALGORITMO'
-	{ after(grammarAccess.getProgramaAccess().getALGORITMOKeyword_4()); }
+	{ before(grammarAccess.getProgramaAccess().getCODIGOKeyword_4()); }
+	'CODIGO'
+	{ after(grammarAccess.getProgramaAccess().getCODIGOKeyword_4()); }
 )
 ;
 finally {
@@ -1896,9 +1908,9 @@ rule__ComandoEntrada__Group__0__Impl
 	}
 :
 (
-	{ before(grammarAccess.getComandoEntradaAccess().getLERKeyword_0()); }
-	'LER'
-	{ after(grammarAccess.getComandoEntradaAccess().getLERKeyword_0()); }
+	{ before(grammarAccess.getComandoEntradaAccess().getLEIAKeyword_0()); }
+	'LEIA'
+	{ after(grammarAccess.getComandoEntradaAccess().getLEIAKeyword_0()); }
 )
 ;
 finally {
@@ -1950,9 +1962,9 @@ rule__ComandoSaida__Group__0__Impl
 	}
 :
 (
-	{ before(grammarAccess.getComandoSaidaAccess().getIMPRIMIRKeyword_0()); }
-	'IMPRIMIR'
-	{ after(grammarAccess.getComandoSaidaAccess().getIMPRIMIRKeyword_0()); }
+	{ before(grammarAccess.getComandoSaidaAccess().getPRINTKeyword_0()); }
+	'PRINT'
+	{ after(grammarAccess.getComandoSaidaAccess().getPRINTKeyword_0()); }
 )
 ;
 finally {

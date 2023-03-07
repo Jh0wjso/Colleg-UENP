@@ -3,6 +3,7 @@
  */
 package br.compiladores.jhonatan.jlanguage.jlanguage.impl;
 
+import br.compiladores.jhonatan.jlanguage.jlanguage.ChamadaFuncao;
 import br.compiladores.jhonatan.jlanguage.jlanguage.Comando;
 import br.compiladores.jhonatan.jlanguage.jlanguage.ComandoAtibuicao;
 import br.compiladores.jhonatan.jlanguage.jlanguage.ComandoCondicao;
@@ -17,6 +18,7 @@ import br.compiladores.jhonatan.jlanguage.jlanguage.FatorAritmetico;
 import br.compiladores.jhonatan.jlanguage.jlanguage.FatorNumero;
 import br.compiladores.jhonatan.jlanguage.jlanguage.FatorSubExpressao;
 import br.compiladores.jhonatan.jlanguage.jlanguage.FatorVariavel;
+import br.compiladores.jhonatan.jlanguage.jlanguage.Funcao;
 import br.compiladores.jhonatan.jlanguage.jlanguage.JlanguageFactory;
 import br.compiladores.jhonatan.jlanguage.jlanguage.JlanguagePackage;
 import br.compiladores.jhonatan.jlanguage.jlanguage.OutroFatorAritmetico;
@@ -196,6 +198,20 @@ public class JlanguagePackageImpl extends EPackageImpl implements JlanguagePacka
    * @generated
    */
   private EClass comandoSubAlgoritmoEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass chamadaFuncaoEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass funcaoEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -870,6 +886,94 @@ public class JlanguagePackageImpl extends EPackageImpl implements JlanguagePacka
    * @generated
    */
   @Override
+  public EClass getChamadaFuncao()
+  {
+    return chamadaFuncaoEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getChamadaFuncao_Name()
+  {
+    return (EAttribute)chamadaFuncaoEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getChamadaFuncao_Argumentos()
+  {
+    return (EReference)chamadaFuncaoEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getFuncao()
+  {
+    return funcaoEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getFuncao_Name()
+  {
+    return (EAttribute)funcaoEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getFuncao_Parametros()
+  {
+    return (EReference)funcaoEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getFuncao_Tipo()
+  {
+    return (EAttribute)funcaoEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getFuncao_Comandos()
+  {
+    return (EReference)funcaoEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public JlanguageFactory getJlanguageFactory()
   {
     return (JlanguageFactory)getEFactoryInstance();
@@ -971,6 +1075,16 @@ public class JlanguagePackageImpl extends EPackageImpl implements JlanguagePacka
 
     comandoSubAlgoritmoEClass = createEClass(COMANDO_SUB_ALGORITMO);
     createEReference(comandoSubAlgoritmoEClass, COMANDO_SUB_ALGORITMO__COMANDOS);
+
+    chamadaFuncaoEClass = createEClass(CHAMADA_FUNCAO);
+    createEAttribute(chamadaFuncaoEClass, CHAMADA_FUNCAO__NAME);
+    createEReference(chamadaFuncaoEClass, CHAMADA_FUNCAO__ARGUMENTOS);
+
+    funcaoEClass = createEClass(FUNCAO);
+    createEAttribute(funcaoEClass, FUNCAO__NAME);
+    createEReference(funcaoEClass, FUNCAO__PARAMETROS);
+    createEAttribute(funcaoEClass, FUNCAO__TIPO);
+    createEReference(funcaoEClass, FUNCAO__COMANDOS);
   }
 
   /**
@@ -1091,6 +1205,16 @@ public class JlanguagePackageImpl extends EPackageImpl implements JlanguagePacka
 
     initEClass(comandoSubAlgoritmoEClass, ComandoSubAlgoritmo.class, "ComandoSubAlgoritmo", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getComandoSubAlgoritmo_Comandos(), this.getComando(), null, "comandos", null, 0, -1, ComandoSubAlgoritmo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(chamadaFuncaoEClass, ChamadaFuncao.class, "ChamadaFuncao", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getChamadaFuncao_Name(), ecorePackage.getEString(), "name", null, 0, 1, ChamadaFuncao.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getChamadaFuncao_Argumentos(), this.getExpressaoAritmetica(), null, "argumentos", null, 0, -1, ChamadaFuncao.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(funcaoEClass, Funcao.class, "Funcao", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getFuncao_Name(), ecorePackage.getEString(), "name", null, 0, 1, Funcao.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getFuncao_Parametros(), this.getDeclaracao(), null, "parametros", null, 0, -1, Funcao.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getFuncao_Tipo(), ecorePackage.getEString(), "tipo", null, 0, 1, Funcao.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getFuncao_Comandos(), this.getComando(), null, "comandos", null, 0, 1, Funcao.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

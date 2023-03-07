@@ -57,6 +57,12 @@ public class JlanguageParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getComandoCondicaoAccess().getGroup_4(), "rule__ComandoCondicao__Group_4__0");
 			builder.put(grammarAccess.getComandoRepeticaoAccess().getGroup(), "rule__ComandoRepeticao__Group__0");
 			builder.put(grammarAccess.getComandoSubAlgoritmoAccess().getGroup(), "rule__ComandoSubAlgoritmo__Group__0");
+			builder.put(grammarAccess.getChamadaFuncaoAccess().getGroup(), "rule__ChamadaFuncao__Group__0");
+			builder.put(grammarAccess.getChamadaFuncaoAccess().getGroup_2(), "rule__ChamadaFuncao__Group_2__0");
+			builder.put(grammarAccess.getChamadaFuncaoAccess().getGroup_2_1(), "rule__ChamadaFuncao__Group_2_1__0");
+			builder.put(grammarAccess.getFuncaoAccess().getGroup(), "rule__Funcao__Group__0");
+			builder.put(grammarAccess.getFuncaoAccess().getGroup_3(), "rule__Funcao__Group_3__0");
+			builder.put(grammarAccess.getFuncaoAccess().getGroup_3_1(), "rule__Funcao__Group_3_1__0");
 			builder.put(grammarAccess.getProgramaAccess().getDeclaracoesAssignment_2(), "rule__Programa__DeclaracoesAssignment_2");
 			builder.put(grammarAccess.getProgramaAccess().getComandosAssignment_5(), "rule__Programa__ComandosAssignment_5");
 			builder.put(grammarAccess.getDeclaracaoAccess().getNameAssignment_0(), "rule__Declaracao__NameAssignment_0");
@@ -90,6 +96,14 @@ public class JlanguageParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getComandoRepeticaoAccess().getExpAssignment_1(), "rule__ComandoRepeticao__ExpAssignment_1");
 			builder.put(grammarAccess.getComandoRepeticaoAccess().getCmdAssignment_2(), "rule__ComandoRepeticao__CmdAssignment_2");
 			builder.put(grammarAccess.getComandoSubAlgoritmoAccess().getComandosAssignment_1(), "rule__ComandoSubAlgoritmo__ComandosAssignment_1");
+			builder.put(grammarAccess.getChamadaFuncaoAccess().getNameAssignment_0(), "rule__ChamadaFuncao__NameAssignment_0");
+			builder.put(grammarAccess.getChamadaFuncaoAccess().getArgumentosAssignment_2_0(), "rule__ChamadaFuncao__ArgumentosAssignment_2_0");
+			builder.put(grammarAccess.getChamadaFuncaoAccess().getArgumentosAssignment_2_1_1(), "rule__ChamadaFuncao__ArgumentosAssignment_2_1_1");
+			builder.put(grammarAccess.getFuncaoAccess().getNameAssignment_1(), "rule__Funcao__NameAssignment_1");
+			builder.put(grammarAccess.getFuncaoAccess().getParametrosAssignment_3_0(), "rule__Funcao__ParametrosAssignment_3_0");
+			builder.put(grammarAccess.getFuncaoAccess().getParametrosAssignment_3_1_1(), "rule__Funcao__ParametrosAssignment_3_1_1");
+			builder.put(grammarAccess.getFuncaoAccess().getTipoAssignment_6(), "rule__Funcao__TipoAssignment_6");
+			builder.put(grammarAccess.getFuncaoAccess().getComandosAssignment_7(), "rule__Funcao__ComandosAssignment_7");
 		}
 	}
 	

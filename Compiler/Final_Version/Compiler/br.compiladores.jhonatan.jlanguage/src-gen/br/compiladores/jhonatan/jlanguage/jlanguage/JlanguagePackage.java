@@ -772,6 +772,98 @@ public interface JlanguagePackage extends EPackage
    */
   int COMANDO_SUB_ALGORITMO_FEATURE_COUNT = COMANDO_FEATURE_COUNT + 1;
 
+  /**
+   * The meta object id for the '{@link br.compiladores.jhonatan.jlanguage.jlanguage.impl.ChamadaFuncaoImpl <em>Chamada Funcao</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see br.compiladores.jhonatan.jlanguage.jlanguage.impl.ChamadaFuncaoImpl
+   * @see br.compiladores.jhonatan.jlanguage.jlanguage.impl.JlanguagePackageImpl#getChamadaFuncao()
+   * @generated
+   */
+  int CHAMADA_FUNCAO = 22;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CHAMADA_FUNCAO__NAME = 0;
+
+  /**
+   * The feature id for the '<em><b>Argumentos</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CHAMADA_FUNCAO__ARGUMENTOS = 1;
+
+  /**
+   * The number of structural features of the '<em>Chamada Funcao</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CHAMADA_FUNCAO_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link br.compiladores.jhonatan.jlanguage.jlanguage.impl.FuncaoImpl <em>Funcao</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see br.compiladores.jhonatan.jlanguage.jlanguage.impl.FuncaoImpl
+   * @see br.compiladores.jhonatan.jlanguage.jlanguage.impl.JlanguagePackageImpl#getFuncao()
+   * @generated
+   */
+  int FUNCAO = 23;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FUNCAO__NAME = 0;
+
+  /**
+   * The feature id for the '<em><b>Parametros</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FUNCAO__PARAMETROS = 1;
+
+  /**
+   * The feature id for the '<em><b>Tipo</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FUNCAO__TIPO = 2;
+
+  /**
+   * The feature id for the '<em><b>Comandos</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FUNCAO__COMANDOS = 3;
+
+  /**
+   * The number of structural features of the '<em>Funcao</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FUNCAO_FEATURE_COUNT = 4;
+
 
   /**
    * Returns the meta object for class '{@link br.compiladores.jhonatan.jlanguage.jlanguage.Programa <em>Programa</em>}'.
@@ -1357,6 +1449,92 @@ public interface JlanguagePackage extends EPackage
   EReference getComandoSubAlgoritmo_Comandos();
 
   /**
+   * Returns the meta object for class '{@link br.compiladores.jhonatan.jlanguage.jlanguage.ChamadaFuncao <em>Chamada Funcao</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Chamada Funcao</em>'.
+   * @see br.compiladores.jhonatan.jlanguage.jlanguage.ChamadaFuncao
+   * @generated
+   */
+  EClass getChamadaFuncao();
+
+  /**
+   * Returns the meta object for the attribute '{@link br.compiladores.jhonatan.jlanguage.jlanguage.ChamadaFuncao#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see br.compiladores.jhonatan.jlanguage.jlanguage.ChamadaFuncao#getName()
+   * @see #getChamadaFuncao()
+   * @generated
+   */
+  EAttribute getChamadaFuncao_Name();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link br.compiladores.jhonatan.jlanguage.jlanguage.ChamadaFuncao#getArgumentos <em>Argumentos</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Argumentos</em>'.
+   * @see br.compiladores.jhonatan.jlanguage.jlanguage.ChamadaFuncao#getArgumentos()
+   * @see #getChamadaFuncao()
+   * @generated
+   */
+  EReference getChamadaFuncao_Argumentos();
+
+  /**
+   * Returns the meta object for class '{@link br.compiladores.jhonatan.jlanguage.jlanguage.Funcao <em>Funcao</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Funcao</em>'.
+   * @see br.compiladores.jhonatan.jlanguage.jlanguage.Funcao
+   * @generated
+   */
+  EClass getFuncao();
+
+  /**
+   * Returns the meta object for the attribute '{@link br.compiladores.jhonatan.jlanguage.jlanguage.Funcao#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see br.compiladores.jhonatan.jlanguage.jlanguage.Funcao#getName()
+   * @see #getFuncao()
+   * @generated
+   */
+  EAttribute getFuncao_Name();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link br.compiladores.jhonatan.jlanguage.jlanguage.Funcao#getParametros <em>Parametros</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Parametros</em>'.
+   * @see br.compiladores.jhonatan.jlanguage.jlanguage.Funcao#getParametros()
+   * @see #getFuncao()
+   * @generated
+   */
+  EReference getFuncao_Parametros();
+
+  /**
+   * Returns the meta object for the attribute '{@link br.compiladores.jhonatan.jlanguage.jlanguage.Funcao#getTipo <em>Tipo</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Tipo</em>'.
+   * @see br.compiladores.jhonatan.jlanguage.jlanguage.Funcao#getTipo()
+   * @see #getFuncao()
+   * @generated
+   */
+  EAttribute getFuncao_Tipo();
+
+  /**
+   * Returns the meta object for the containment reference '{@link br.compiladores.jhonatan.jlanguage.jlanguage.Funcao#getComandos <em>Comandos</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Comandos</em>'.
+   * @see br.compiladores.jhonatan.jlanguage.jlanguage.Funcao#getComandos()
+   * @see #getFuncao()
+   * @generated
+   */
+  EReference getFuncao_Comandos();
+
+  /**
    * Returns the factory that creates the instances of the model.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1862,6 +2040,74 @@ public interface JlanguagePackage extends EPackage
      * @generated
      */
     EReference COMANDO_SUB_ALGORITMO__COMANDOS = eINSTANCE.getComandoSubAlgoritmo_Comandos();
+
+    /**
+     * The meta object literal for the '{@link br.compiladores.jhonatan.jlanguage.jlanguage.impl.ChamadaFuncaoImpl <em>Chamada Funcao</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see br.compiladores.jhonatan.jlanguage.jlanguage.impl.ChamadaFuncaoImpl
+     * @see br.compiladores.jhonatan.jlanguage.jlanguage.impl.JlanguagePackageImpl#getChamadaFuncao()
+     * @generated
+     */
+    EClass CHAMADA_FUNCAO = eINSTANCE.getChamadaFuncao();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CHAMADA_FUNCAO__NAME = eINSTANCE.getChamadaFuncao_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Argumentos</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CHAMADA_FUNCAO__ARGUMENTOS = eINSTANCE.getChamadaFuncao_Argumentos();
+
+    /**
+     * The meta object literal for the '{@link br.compiladores.jhonatan.jlanguage.jlanguage.impl.FuncaoImpl <em>Funcao</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see br.compiladores.jhonatan.jlanguage.jlanguage.impl.FuncaoImpl
+     * @see br.compiladores.jhonatan.jlanguage.jlanguage.impl.JlanguagePackageImpl#getFuncao()
+     * @generated
+     */
+    EClass FUNCAO = eINSTANCE.getFuncao();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FUNCAO__NAME = eINSTANCE.getFuncao_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Parametros</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FUNCAO__PARAMETROS = eINSTANCE.getFuncao_Parametros();
+
+    /**
+     * The meta object literal for the '<em><b>Tipo</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FUNCAO__TIPO = eINSTANCE.getFuncao_Tipo();
+
+    /**
+     * The meta object literal for the '<em><b>Comandos</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FUNCAO__COMANDOS = eINSTANCE.getFuncao_Comandos();
 
   }
 

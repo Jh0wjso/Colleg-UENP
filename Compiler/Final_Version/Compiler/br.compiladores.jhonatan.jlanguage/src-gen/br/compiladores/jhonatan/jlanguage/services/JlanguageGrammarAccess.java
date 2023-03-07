@@ -27,25 +27,28 @@ public class JlanguageGrammarAccess extends AbstractElementFinder.AbstractGramma
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "br.compiladores.jhonatan.jlanguage.Jlanguage.Programa");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cColonKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Keyword cDECLARACOESKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cVARIAVEISKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cDeclaracoesAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cDeclaracoesDeclaracaoParserRuleCall_2_0 = (RuleCall)cDeclaracoesAssignment_2.eContents().get(0);
 		private final Keyword cColonKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Keyword cALGORITMOKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Keyword cCODIGOKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		private final Assignment cComandosAssignment_5 = (Assignment)cGroup.eContents().get(5);
 		private final RuleCall cComandosComandoParserRuleCall_5_0 = (RuleCall)cComandosAssignment_5.eContents().get(0);
 		
-		//Programa : ':' 'DECLARACOES' (declaracoes+=Declaracao)+':' 'ALGORITMO' (comandos+=Comando)+;
+		//Programa:
+		//    ':' 'VARIAVEIS' (declaracoes+=Declaracao)+
+		//    ':' 'CODIGO' (comandos+=Comando)+;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//':' 'DECLARACOES' (declaracoes+=Declaracao)+':' 'ALGORITMO' (comandos+=Comando)+
+		//':' 'VARIAVEIS' (declaracoes+=Declaracao)+
+		//':' 'CODIGO' (comandos+=Comando)+
 		public Group getGroup() { return cGroup; }
 		
 		//':'
 		public Keyword getColonKeyword_0() { return cColonKeyword_0; }
 		
-		//'DECLARACOES'
-		public Keyword getDECLARACOESKeyword_1() { return cDECLARACOESKeyword_1; }
+		//'VARIAVEIS'
+		public Keyword getVARIAVEISKeyword_1() { return cVARIAVEISKeyword_1; }
 		
 		//(declaracoes+=Declaracao)+
 		public Assignment getDeclaracoesAssignment_2() { return cDeclaracoesAssignment_2; }
@@ -56,8 +59,8 @@ public class JlanguageGrammarAccess extends AbstractElementFinder.AbstractGramma
 		//':'
 		public Keyword getColonKeyword_3() { return cColonKeyword_3; }
 		
-		//'ALGORITMO'
-		public Keyword getALGORITMOKeyword_4() { return cALGORITMOKeyword_4; }
+		//'CODIGO'
+		public Keyword getCODIGOKeyword_4() { return cCODIGOKeyword_4; }
 		
 		//(comandos+=Comando)+
 		public Assignment getComandosAssignment_5() { return cComandosAssignment_5; }
@@ -74,13 +77,14 @@ public class JlanguageGrammarAccess extends AbstractElementFinder.AbstractGramma
 		private final Assignment cTipoAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cTipoTipoVarParserRuleCall_2_0 = (RuleCall)cTipoAssignment_2.eContents().get(0);
 		
-		//Declaracao : name = ID ':' tipo=TipoVar;
+		//Declaracao:
+		//    name=ID ':' tipo=TipoVar;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//name = ID ':' tipo=TipoVar
+		//name=ID ':' tipo=TipoVar
 		public Group getGroup() { return cGroup; }
 		
-		//name = ID
+		//name=ID
 		public Assignment getNameAssignment_0() { return cNameAssignment_0; }
 		
 		//ID
@@ -103,7 +107,8 @@ public class JlanguageGrammarAccess extends AbstractElementFinder.AbstractGramma
 		private final Assignment cOutrosTermosAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cOutrosTermosOutroTermoAritmeticoParserRuleCall_1_0 = (RuleCall)cOutrosTermosAssignment_1.eContents().get(0);
 		
-		//ExpressaoAritmetica : termo1=TermoAritmetico outrosTermos+=OutroTermoAritmetico*;
+		//ExpressaoAritmetica:
+		//    termo1=TermoAritmetico outrosTermos+=OutroTermoAritmetico*;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//termo1=TermoAritmetico outrosTermos+=OutroTermoAritmetico*
@@ -129,7 +134,8 @@ public class JlanguageGrammarAccess extends AbstractElementFinder.AbstractGramma
 		private final Assignment cTermoAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cTermoTermoAritmeticoParserRuleCall_1_0 = (RuleCall)cTermoAssignment_1.eContents().get(0);
 		
-		//OutroTermoAritmetico : operador=OpArit1 termo=TermoAritmetico;
+		//OutroTermoAritmetico:
+		//    operador=OpArit1 termo=TermoAritmetico;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//operador=OpArit1 termo=TermoAritmetico
@@ -155,7 +161,8 @@ public class JlanguageGrammarAccess extends AbstractElementFinder.AbstractGramma
 		private final Assignment cOutrosFatoresAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cOutrosFatoresOutroFatorAritmeticoParserRuleCall_1_0 = (RuleCall)cOutrosFatoresAssignment_1.eContents().get(0);
 		
-		//TermoAritmetico : fator1=FatorAritmetico outrosFatores+=OutroFatorAritmetico*;
+		//TermoAritmetico:
+		//    fator1=FatorAritmetico outrosFatores+=OutroFatorAritmetico*;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//fator1=FatorAritmetico outrosFatores+=OutroFatorAritmetico*
@@ -181,7 +188,8 @@ public class JlanguageGrammarAccess extends AbstractElementFinder.AbstractGramma
 		private final Assignment cFatorAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cFatorFatorAritmeticoParserRuleCall_1_0 = (RuleCall)cFatorAssignment_1.eContents().get(0);
 		
-		//OutroFatorAritmetico : operador=OpArit2 fator=FatorAritmetico;
+		//OutroFatorAritmetico:
+		//    operador=OpArit2 fator=FatorAritmetico;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//operador=OpArit2 fator=FatorAritmetico
@@ -206,7 +214,8 @@ public class JlanguageGrammarAccess extends AbstractElementFinder.AbstractGramma
 		private final RuleCall cFatorVariavelParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		private final RuleCall cFatorSubExpressaoParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		
-		//FatorAritmetico : FatorNumero | FatorVariavel | FatorSubExpressao;
+		//FatorAritmetico:
+		//    FatorNumero | FatorVariavel | FatorSubExpressao;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//FatorNumero | FatorVariavel | FatorSubExpressao
@@ -226,7 +235,8 @@ public class JlanguageGrammarAccess extends AbstractElementFinder.AbstractGramma
 		private final Assignment cNumeroAssignment = (Assignment)rule.eContents().get(1);
 		private final RuleCall cNumeroINTTerminalRuleCall_0 = (RuleCall)cNumeroAssignment.eContents().get(0);
 		
-		//FatorNumero: numero=INT;
+		//FatorNumero:
+		//    numero=INT;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//numero=INT
@@ -241,7 +251,8 @@ public class JlanguageGrammarAccess extends AbstractElementFinder.AbstractGramma
 		private final CrossReference cVariavelDeclaracaoCrossReference_0 = (CrossReference)cVariavelAssignment.eContents().get(0);
 		private final RuleCall cVariavelDeclaracaoIDTerminalRuleCall_0_1 = (RuleCall)cVariavelDeclaracaoCrossReference_0.eContents().get(1);
 		
-		//FatorVariavel : variavel=[Declaracao];
+		//FatorVariavel:
+		//    variavel=[Declaracao];
 		@Override public ParserRule getRule() { return rule; }
 		
 		//variavel=[Declaracao]
@@ -261,7 +272,8 @@ public class JlanguageGrammarAccess extends AbstractElementFinder.AbstractGramma
 		private final RuleCall cExpressaoExpressaoAritmeticaParserRuleCall_1_0 = (RuleCall)cExpressaoAssignment_1.eContents().get(0);
 		private final Keyword cRightParenthesisKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		
-		//FatorSubExpressao : '(' expressao=ExpressaoAritmetica ')';
+		//FatorSubExpressao:
+		//    '(' expressao=ExpressaoAritmetica ')';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'(' expressao=ExpressaoAritmetica ')'
@@ -287,7 +299,8 @@ public class JlanguageGrammarAccess extends AbstractElementFinder.AbstractGramma
 		private final Assignment cOutrosTermosAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cOutrosTermosOutroTermoRelacionalParserRuleCall_1_0 = (RuleCall)cOutrosTermosAssignment_1.eContents().get(0);
 		
-		//ExpressaoRelacional : termo1=TermoRelacional outrosTermos+=OutroTermoRelacional*;
+		//ExpressaoRelacional:
+		//    termo1=TermoRelacional outrosTermos+=OutroTermoRelacional*;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//termo1=TermoRelacional outrosTermos+=OutroTermoRelacional*
@@ -313,7 +326,8 @@ public class JlanguageGrammarAccess extends AbstractElementFinder.AbstractGramma
 		private final Assignment cTermoAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cTermoTermoRelacionalParserRuleCall_1_0 = (RuleCall)cTermoAssignment_1.eContents().get(0);
 		
-		//OutroTermoRelacional : operador=OpBool termo=TermoRelacional;
+		//OutroTermoRelacional:
+		//    operador=OpBool termo=TermoRelacional;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//operador=OpBool termo=TermoRelacional
@@ -337,7 +351,8 @@ public class JlanguageGrammarAccess extends AbstractElementFinder.AbstractGramma
 		private final RuleCall cTermoComparacaoRelacionalParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cTermoSubExpressaoRelacionalParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
-		//TermoRelacional : TermoComparacaoRelacional | TermoSubExpressaoRelacional;
+		//TermoRelacional:
+		//    TermoComparacaoRelacional | TermoSubExpressaoRelacional;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//TermoComparacaoRelacional | TermoSubExpressaoRelacional
@@ -359,7 +374,8 @@ public class JlanguageGrammarAccess extends AbstractElementFinder.AbstractGramma
 		private final Assignment cExpr2Assignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cExpr2ExpressaoAritmeticaParserRuleCall_2_0 = (RuleCall)cExpr2Assignment_2.eContents().get(0);
 		
-		//TermoComparacaoRelacional : expr1=ExpressaoAritmetica opRel=OpRel expr2=ExpressaoAritmetica;
+		//TermoComparacaoRelacional:
+		//    expr1=ExpressaoAritmetica opRel=OpRel expr2=ExpressaoAritmetica;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//expr1=ExpressaoAritmetica opRel=OpRel expr2=ExpressaoAritmetica
@@ -391,7 +407,8 @@ public class JlanguageGrammarAccess extends AbstractElementFinder.AbstractGramma
 		private final RuleCall cExpRelExpressaoRelacionalParserRuleCall_1_0 = (RuleCall)cExpRelAssignment_1.eContents().get(0);
 		private final Keyword cRightSquareBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		
-		//TermoSubExpressaoRelacional : '[' expRel=ExpressaoRelacional ']';
+		//TermoSubExpressaoRelacional:
+		//    '[' expRel=ExpressaoRelacional ']';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'[' expRel=ExpressaoRelacional ']'
@@ -419,7 +436,8 @@ public class JlanguageGrammarAccess extends AbstractElementFinder.AbstractGramma
 		private final RuleCall cComandoRepeticaoParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
 		private final RuleCall cComandoSubAlgoritmoParserRuleCall_5 = (RuleCall)cAlternatives.eContents().get(5);
 		
-		//Comando : ComandoAtibuicao | ComandoEntrada | ComandoSaida | ComandoCondicao | ComandoRepeticao | ComandoSubAlgoritmo;
+		//Comando:
+		//    ComandoAtibuicao | ComandoEntrada | ComandoSaida | ComandoCondicao | ComandoRepeticao | ComandoSubAlgoritmo;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//ComandoAtibuicao | ComandoEntrada | ComandoSaida | ComandoCondicao | ComandoRepeticao | ComandoSubAlgoritmo
@@ -454,7 +472,8 @@ public class JlanguageGrammarAccess extends AbstractElementFinder.AbstractGramma
 		private final CrossReference cVariavelDeclaracaoCrossReference_3_0 = (CrossReference)cVariavelAssignment_3.eContents().get(0);
 		private final RuleCall cVariavelDeclaracaoIDTerminalRuleCall_3_0_1 = (RuleCall)cVariavelDeclaracaoCrossReference_3_0.eContents().get(1);
 		
-		//ComandoAtibuicao : 'ATRIBUIR' exp=ExpressaoAritmetica 'A' variavel=[Declaracao];
+		//ComandoAtibuicao:
+		//    'ATRIBUIR' exp=ExpressaoAritmetica 'A' variavel=[Declaracao];
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'ATRIBUIR' exp=ExpressaoAritmetica 'A' variavel=[Declaracao]
@@ -484,19 +503,20 @@ public class JlanguageGrammarAccess extends AbstractElementFinder.AbstractGramma
 	public class ComandoEntradaElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "br.compiladores.jhonatan.jlanguage.Jlanguage.ComandoEntrada");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cLERKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cLEIAKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cVariavelAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final CrossReference cVariavelDeclaracaoCrossReference_1_0 = (CrossReference)cVariavelAssignment_1.eContents().get(0);
 		private final RuleCall cVariavelDeclaracaoIDTerminalRuleCall_1_0_1 = (RuleCall)cVariavelDeclaracaoCrossReference_1_0.eContents().get(1);
 		
-		//ComandoEntrada : 'LER' variavel=[Declaracao];
+		//ComandoEntrada:
+		//    'LEIA' variavel=[Declaracao];
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'LER' variavel=[Declaracao]
+		//'LEIA' variavel=[Declaracao]
 		public Group getGroup() { return cGroup; }
 		
-		//'LER'
-		public Keyword getLERKeyword_0() { return cLERKeyword_0; }
+		//'LEIA'
+		public Keyword getLEIAKeyword_0() { return cLEIAKeyword_0; }
 		
 		//variavel=[Declaracao]
 		public Assignment getVariavelAssignment_1() { return cVariavelAssignment_1; }
@@ -510,19 +530,20 @@ public class JlanguageGrammarAccess extends AbstractElementFinder.AbstractGramma
 	public class ComandoSaidaElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "br.compiladores.jhonatan.jlanguage.Jlanguage.ComandoSaida");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cIMPRIMIRKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cPRINTKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cVariavelAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final CrossReference cVariavelDeclaracaoCrossReference_1_0 = (CrossReference)cVariavelAssignment_1.eContents().get(0);
 		private final RuleCall cVariavelDeclaracaoIDTerminalRuleCall_1_0_1 = (RuleCall)cVariavelDeclaracaoCrossReference_1_0.eContents().get(1);
 		
-		//ComandoSaida : 'IMPRIMIR' variavel=[Declaracao];
+		//ComandoSaida:
+		//    'PRINT' variavel=[Declaracao];
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'IMPRIMIR' variavel=[Declaracao]
+		//'PRINT' variavel=[Declaracao]
 		public Group getGroup() { return cGroup; }
 		
-		//'IMPRIMIR'
-		public Keyword getIMPRIMIRKeyword_0() { return cIMPRIMIRKeyword_0; }
+		//'PRINT'
+		public Keyword getPRINTKeyword_0() { return cPRINTKeyword_0; }
 		
 		//variavel=[Declaracao]
 		public Assignment getVariavelAssignment_1() { return cVariavelAssignment_1; }
@@ -547,7 +568,8 @@ public class JlanguageGrammarAccess extends AbstractElementFinder.AbstractGramma
 		private final Assignment cCmd2Assignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
 		private final RuleCall cCmd2ComandoParserRuleCall_4_1_0 = (RuleCall)cCmd2Assignment_4_1.eContents().get(0);
 		
-		//ComandoCondicao : 'SE' exp=ExpressaoRelacional 'ENTAO' cmd1=Comando ('SENAO' cmd2=Comando)?;
+		//ComandoCondicao:
+		//    'SE' exp=ExpressaoRelacional 'ENTAO' cmd1=Comando ('SENAO' cmd2=Comando)?;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'SE' exp=ExpressaoRelacional 'ENTAO' cmd1=Comando ('SENAO' cmd2=Comando)?
@@ -592,7 +614,8 @@ public class JlanguageGrammarAccess extends AbstractElementFinder.AbstractGramma
 		private final Assignment cCmdAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cCmdComandoParserRuleCall_2_0 = (RuleCall)cCmdAssignment_2.eContents().get(0);
 		
-		//ComandoRepeticao : 'ENQUANTO' exp=ExpressaoRelacional cmd=Comando;
+		//ComandoRepeticao:
+		//    'ENQUANTO' exp=ExpressaoRelacional cmd=Comando;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'ENQUANTO' exp=ExpressaoRelacional cmd=Comando
@@ -621,7 +644,8 @@ public class JlanguageGrammarAccess extends AbstractElementFinder.AbstractGramma
 		private final RuleCall cComandosComandoParserRuleCall_1_0 = (RuleCall)cComandosAssignment_1.eContents().get(0);
 		private final Keyword cFIMKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		
-		//ComandoSubAlgoritmo : 'INICIO' (comandos+=Comando)+ 'FIM';
+		//ComandoSubAlgoritmo:
+		//    'INICIO' (comandos+=Comando)+ 'FIM';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'INICIO' (comandos+=Comando)+ 'FIM'
@@ -639,16 +663,153 @@ public class JlanguageGrammarAccess extends AbstractElementFinder.AbstractGramma
 		//'FIM'
 		public Keyword getFIMKeyword_2() { return cFIMKeyword_2; }
 	}
+	public class ChamadaFuncaoElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "br.compiladores.jhonatan.jlanguage.Jlanguage.ChamadaFuncao");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cNameAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cNameIDTerminalRuleCall_0_0 = (RuleCall)cNameAssignment_0.eContents().get(0);
+		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
+		private final Assignment cArgumentosAssignment_2_0 = (Assignment)cGroup_2.eContents().get(0);
+		private final RuleCall cArgumentosExpressaoAritmeticaParserRuleCall_2_0_0 = (RuleCall)cArgumentosAssignment_2_0.eContents().get(0);
+		private final Group cGroup_2_1 = (Group)cGroup_2.eContents().get(1);
+		private final Keyword cCommaKeyword_2_1_0 = (Keyword)cGroup_2_1.eContents().get(0);
+		private final Assignment cArgumentosAssignment_2_1_1 = (Assignment)cGroup_2_1.eContents().get(1);
+		private final RuleCall cArgumentosExpressaoAritmeticaParserRuleCall_2_1_1_0 = (RuleCall)cArgumentosAssignment_2_1_1.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		
+		//ChamadaFuncao:
+		//    name=ID '(' (argumentos+=ExpressaoAritmetica (',' argumentos+=ExpressaoAritmetica)*)? ')';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//name=ID '(' (argumentos+=ExpressaoAritmetica (',' argumentos+=ExpressaoAritmetica)*)? ')'
+		public Group getGroup() { return cGroup; }
+		
+		//name=ID
+		public Assignment getNameAssignment_0() { return cNameAssignment_0; }
+		
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_0_0() { return cNameIDTerminalRuleCall_0_0; }
+		
+		//'('
+		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
+		
+		//(argumentos+=ExpressaoAritmetica (',' argumentos+=ExpressaoAritmetica)*)?
+		public Group getGroup_2() { return cGroup_2; }
+		
+		//argumentos+=ExpressaoAritmetica
+		public Assignment getArgumentosAssignment_2_0() { return cArgumentosAssignment_2_0; }
+		
+		//ExpressaoAritmetica
+		public RuleCall getArgumentosExpressaoAritmeticaParserRuleCall_2_0_0() { return cArgumentosExpressaoAritmeticaParserRuleCall_2_0_0; }
+		
+		//(',' argumentos+=ExpressaoAritmetica)*
+		public Group getGroup_2_1() { return cGroup_2_1; }
+		
+		//','
+		public Keyword getCommaKeyword_2_1_0() { return cCommaKeyword_2_1_0; }
+		
+		//argumentos+=ExpressaoAritmetica
+		public Assignment getArgumentosAssignment_2_1_1() { return cArgumentosAssignment_2_1_1; }
+		
+		//ExpressaoAritmetica
+		public RuleCall getArgumentosExpressaoAritmeticaParserRuleCall_2_1_1_0() { return cArgumentosExpressaoAritmeticaParserRuleCall_2_1_1_0; }
+		
+		//')'
+		public Keyword getRightParenthesisKeyword_3() { return cRightParenthesisKeyword_3; }
+	}
+	public class FuncaoElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "br.compiladores.jhonatan.jlanguage.Jlanguage.Funcao");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cFUNCAOKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Keyword cLeftParenthesisKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
+		private final Assignment cParametrosAssignment_3_0 = (Assignment)cGroup_3.eContents().get(0);
+		private final RuleCall cParametrosDeclaracaoParserRuleCall_3_0_0 = (RuleCall)cParametrosAssignment_3_0.eContents().get(0);
+		private final Group cGroup_3_1 = (Group)cGroup_3.eContents().get(1);
+		private final Keyword cCommaKeyword_3_1_0 = (Keyword)cGroup_3_1.eContents().get(0);
+		private final Assignment cParametrosAssignment_3_1_1 = (Assignment)cGroup_3_1.eContents().get(1);
+		private final RuleCall cParametrosDeclaracaoParserRuleCall_3_1_1_0 = (RuleCall)cParametrosAssignment_3_1_1.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Keyword cColonKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Assignment cTipoAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final RuleCall cTipoTipoVarParserRuleCall_6_0 = (RuleCall)cTipoAssignment_6.eContents().get(0);
+		private final Assignment cComandosAssignment_7 = (Assignment)cGroup.eContents().get(7);
+		private final RuleCall cComandosComandoParserRuleCall_7_0 = (RuleCall)cComandosAssignment_7.eContents().get(0);
+		
+		//Funcao:
+		//    'FUNCAO' name=ID '(' (parametros+=Declaracao (',' parametros+=Declaracao)*)? ')' ':' tipo=TipoVar comandos=Comando;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'FUNCAO' name=ID '(' (parametros+=Declaracao (',' parametros+=Declaracao)*)? ')' ':' tipo=TipoVar comandos=Comando
+		public Group getGroup() { return cGroup; }
+		
+		//'FUNCAO'
+		public Keyword getFUNCAOKeyword_0() { return cFUNCAOKeyword_0; }
+		
+		//name=ID
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+		
+		//'('
+		public Keyword getLeftParenthesisKeyword_2() { return cLeftParenthesisKeyword_2; }
+		
+		//(parametros+=Declaracao (',' parametros+=Declaracao)*)?
+		public Group getGroup_3() { return cGroup_3; }
+		
+		//parametros+=Declaracao
+		public Assignment getParametrosAssignment_3_0() { return cParametrosAssignment_3_0; }
+		
+		//Declaracao
+		public RuleCall getParametrosDeclaracaoParserRuleCall_3_0_0() { return cParametrosDeclaracaoParserRuleCall_3_0_0; }
+		
+		//(',' parametros+=Declaracao)*
+		public Group getGroup_3_1() { return cGroup_3_1; }
+		
+		//','
+		public Keyword getCommaKeyword_3_1_0() { return cCommaKeyword_3_1_0; }
+		
+		//parametros+=Declaracao
+		public Assignment getParametrosAssignment_3_1_1() { return cParametrosAssignment_3_1_1; }
+		
+		//Declaracao
+		public RuleCall getParametrosDeclaracaoParserRuleCall_3_1_1_0() { return cParametrosDeclaracaoParserRuleCall_3_1_1_0; }
+		
+		//')'
+		public Keyword getRightParenthesisKeyword_4() { return cRightParenthesisKeyword_4; }
+		
+		//':'
+		public Keyword getColonKeyword_5() { return cColonKeyword_5; }
+		
+		//tipo=TipoVar
+		public Assignment getTipoAssignment_6() { return cTipoAssignment_6; }
+		
+		//TipoVar
+		public RuleCall getTipoTipoVarParserRuleCall_6_0() { return cTipoTipoVarParserRuleCall_6_0; }
+		
+		//comandos=Comando
+		public Assignment getComandosAssignment_7() { return cComandosAssignment_7; }
+		
+		//Comando
+		public RuleCall getComandosComandoParserRuleCall_7_0() { return cComandosComandoParserRuleCall_7_0; }
+	}
 	public class TipoVarElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "br.compiladores.jhonatan.jlanguage.Jlanguage.TipoVar");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final Keyword cINTEIROKeyword_0 = (Keyword)cAlternatives.eContents().get(0);
 		private final Keyword cREALKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
+		private final Keyword cTEXTOKeyword_2 = (Keyword)cAlternatives.eContents().get(2);
+		private final Keyword cBOOLEANOKeyword_3 = (Keyword)cAlternatives.eContents().get(3);
 		
-		//TipoVar : 'INTEIRO' | 'REAL';
+		//TipoVar:
+		//    'INTEIRO' | 'REAL' | 'TEXTO' | 'BOOLEANO';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'INTEIRO' | 'REAL'
+		//'INTEIRO' | 'REAL' | 'TEXTO' | 'BOOLEANO'
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//'INTEIRO'
@@ -656,6 +817,12 @@ public class JlanguageGrammarAccess extends AbstractElementFinder.AbstractGramma
 		
 		//'REAL'
 		public Keyword getREALKeyword_1() { return cREALKeyword_1; }
+		
+		//'TEXTO'
+		public Keyword getTEXTOKeyword_2() { return cTEXTOKeyword_2; }
+		
+		//'BOOLEANO'
+		public Keyword getBOOLEANOKeyword_3() { return cBOOLEANOKeyword_3; }
 	}
 	public class OpArit1Elements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "br.compiladores.jhonatan.jlanguage.Jlanguage.OpArit1");
@@ -663,7 +830,8 @@ public class JlanguageGrammarAccess extends AbstractElementFinder.AbstractGramma
 		private final Keyword cPlusSignKeyword_0 = (Keyword)cAlternatives.eContents().get(0);
 		private final Keyword cHyphenMinusKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
 		
-		//OpArit1 : '+' | '-';
+		//OpArit1:
+		//    '+' | '-';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'+' | '-'
@@ -681,7 +849,8 @@ public class JlanguageGrammarAccess extends AbstractElementFinder.AbstractGramma
 		private final Keyword cAsteriskKeyword_0 = (Keyword)cAlternatives.eContents().get(0);
 		private final Keyword cSolidusKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
 		
-		//OpArit2 : '*' | '/';
+		//OpArit2:
+		//    '*' | '/';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'*' | '/'
@@ -703,7 +872,8 @@ public class JlanguageGrammarAccess extends AbstractElementFinder.AbstractGramma
 		private final Keyword cLessThanSignGreaterThanSignKeyword_4 = (Keyword)cAlternatives.eContents().get(4);
 		private final Keyword cEqualsSignKeyword_5 = (Keyword)cAlternatives.eContents().get(5);
 		
-		//OpRel : '>' | '>=' | '<' | '<=' | '<>' | '=';
+		//OpRel:
+		//    '>' | '>=' | '<' | '<=' | '<>' | '=';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'>' | '>=' | '<' | '<=' | '<>' | '='
@@ -733,7 +903,8 @@ public class JlanguageGrammarAccess extends AbstractElementFinder.AbstractGramma
 		private final Keyword cEKeyword_0 = (Keyword)cAlternatives.eContents().get(0);
 		private final Keyword cOUKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
 		
-		//OpBool : 'E' | 'OU';
+		//OpBool:
+		//    'E' | 'OU';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'E' | 'OU'
@@ -769,6 +940,8 @@ public class JlanguageGrammarAccess extends AbstractElementFinder.AbstractGramma
 	private final ComandoCondicaoElements pComandoCondicao;
 	private final ComandoRepeticaoElements pComandoRepeticao;
 	private final ComandoSubAlgoritmoElements pComandoSubAlgoritmo;
+	private final ChamadaFuncaoElements pChamadaFuncao;
+	private final FuncaoElements pFuncao;
 	private final TipoVarElements pTipoVar;
 	private final OpArit1Elements pOpArit1;
 	private final OpArit2Elements pOpArit2;
@@ -806,6 +979,8 @@ public class JlanguageGrammarAccess extends AbstractElementFinder.AbstractGramma
 		this.pComandoCondicao = new ComandoCondicaoElements();
 		this.pComandoRepeticao = new ComandoRepeticaoElements();
 		this.pComandoSubAlgoritmo = new ComandoSubAlgoritmoElements();
+		this.pChamadaFuncao = new ChamadaFuncaoElements();
+		this.pFuncao = new FuncaoElements();
 		this.pTipoVar = new TipoVarElements();
 		this.pOpArit1 = new OpArit1Elements();
 		this.pOpArit2 = new OpArit2Elements();
@@ -840,7 +1015,9 @@ public class JlanguageGrammarAccess extends AbstractElementFinder.AbstractGramma
 	}
 
 	
-	//Programa : ':' 'DECLARACOES' (declaracoes+=Declaracao)+':' 'ALGORITMO' (comandos+=Comando)+;
+	//Programa:
+	//    ':' 'VARIAVEIS' (declaracoes+=Declaracao)+
+	//    ':' 'CODIGO' (comandos+=Comando)+;
 	public ProgramaElements getProgramaAccess() {
 		return pPrograma;
 	}
@@ -849,7 +1026,8 @@ public class JlanguageGrammarAccess extends AbstractElementFinder.AbstractGramma
 		return getProgramaAccess().getRule();
 	}
 	
-	//Declaracao : name = ID ':' tipo=TipoVar;
+	//Declaracao:
+	//    name=ID ':' tipo=TipoVar;
 	public DeclaracaoElements getDeclaracaoAccess() {
 		return pDeclaracao;
 	}
@@ -858,7 +1036,8 @@ public class JlanguageGrammarAccess extends AbstractElementFinder.AbstractGramma
 		return getDeclaracaoAccess().getRule();
 	}
 	
-	//ExpressaoAritmetica : termo1=TermoAritmetico outrosTermos+=OutroTermoAritmetico*;
+	//ExpressaoAritmetica:
+	//    termo1=TermoAritmetico outrosTermos+=OutroTermoAritmetico*;
 	public ExpressaoAritmeticaElements getExpressaoAritmeticaAccess() {
 		return pExpressaoAritmetica;
 	}
@@ -867,7 +1046,8 @@ public class JlanguageGrammarAccess extends AbstractElementFinder.AbstractGramma
 		return getExpressaoAritmeticaAccess().getRule();
 	}
 	
-	//OutroTermoAritmetico : operador=OpArit1 termo=TermoAritmetico;
+	//OutroTermoAritmetico:
+	//    operador=OpArit1 termo=TermoAritmetico;
 	public OutroTermoAritmeticoElements getOutroTermoAritmeticoAccess() {
 		return pOutroTermoAritmetico;
 	}
@@ -876,7 +1056,8 @@ public class JlanguageGrammarAccess extends AbstractElementFinder.AbstractGramma
 		return getOutroTermoAritmeticoAccess().getRule();
 	}
 	
-	//TermoAritmetico : fator1=FatorAritmetico outrosFatores+=OutroFatorAritmetico*;
+	//TermoAritmetico:
+	//    fator1=FatorAritmetico outrosFatores+=OutroFatorAritmetico*;
 	public TermoAritmeticoElements getTermoAritmeticoAccess() {
 		return pTermoAritmetico;
 	}
@@ -885,7 +1066,8 @@ public class JlanguageGrammarAccess extends AbstractElementFinder.AbstractGramma
 		return getTermoAritmeticoAccess().getRule();
 	}
 	
-	//OutroFatorAritmetico : operador=OpArit2 fator=FatorAritmetico;
+	//OutroFatorAritmetico:
+	//    operador=OpArit2 fator=FatorAritmetico;
 	public OutroFatorAritmeticoElements getOutroFatorAritmeticoAccess() {
 		return pOutroFatorAritmetico;
 	}
@@ -894,7 +1076,8 @@ public class JlanguageGrammarAccess extends AbstractElementFinder.AbstractGramma
 		return getOutroFatorAritmeticoAccess().getRule();
 	}
 	
-	//FatorAritmetico : FatorNumero | FatorVariavel | FatorSubExpressao;
+	//FatorAritmetico:
+	//    FatorNumero | FatorVariavel | FatorSubExpressao;
 	public FatorAritmeticoElements getFatorAritmeticoAccess() {
 		return pFatorAritmetico;
 	}
@@ -903,7 +1086,8 @@ public class JlanguageGrammarAccess extends AbstractElementFinder.AbstractGramma
 		return getFatorAritmeticoAccess().getRule();
 	}
 	
-	//FatorNumero: numero=INT;
+	//FatorNumero:
+	//    numero=INT;
 	public FatorNumeroElements getFatorNumeroAccess() {
 		return pFatorNumero;
 	}
@@ -912,7 +1096,8 @@ public class JlanguageGrammarAccess extends AbstractElementFinder.AbstractGramma
 		return getFatorNumeroAccess().getRule();
 	}
 	
-	//FatorVariavel : variavel=[Declaracao];
+	//FatorVariavel:
+	//    variavel=[Declaracao];
 	public FatorVariavelElements getFatorVariavelAccess() {
 		return pFatorVariavel;
 	}
@@ -921,7 +1106,8 @@ public class JlanguageGrammarAccess extends AbstractElementFinder.AbstractGramma
 		return getFatorVariavelAccess().getRule();
 	}
 	
-	//FatorSubExpressao : '(' expressao=ExpressaoAritmetica ')';
+	//FatorSubExpressao:
+	//    '(' expressao=ExpressaoAritmetica ')';
 	public FatorSubExpressaoElements getFatorSubExpressaoAccess() {
 		return pFatorSubExpressao;
 	}
@@ -930,7 +1116,8 @@ public class JlanguageGrammarAccess extends AbstractElementFinder.AbstractGramma
 		return getFatorSubExpressaoAccess().getRule();
 	}
 	
-	//ExpressaoRelacional : termo1=TermoRelacional outrosTermos+=OutroTermoRelacional*;
+	//ExpressaoRelacional:
+	//    termo1=TermoRelacional outrosTermos+=OutroTermoRelacional*;
 	public ExpressaoRelacionalElements getExpressaoRelacionalAccess() {
 		return pExpressaoRelacional;
 	}
@@ -939,7 +1126,8 @@ public class JlanguageGrammarAccess extends AbstractElementFinder.AbstractGramma
 		return getExpressaoRelacionalAccess().getRule();
 	}
 	
-	//OutroTermoRelacional : operador=OpBool termo=TermoRelacional;
+	//OutroTermoRelacional:
+	//    operador=OpBool termo=TermoRelacional;
 	public OutroTermoRelacionalElements getOutroTermoRelacionalAccess() {
 		return pOutroTermoRelacional;
 	}
@@ -948,7 +1136,8 @@ public class JlanguageGrammarAccess extends AbstractElementFinder.AbstractGramma
 		return getOutroTermoRelacionalAccess().getRule();
 	}
 	
-	//TermoRelacional : TermoComparacaoRelacional | TermoSubExpressaoRelacional;
+	//TermoRelacional:
+	//    TermoComparacaoRelacional | TermoSubExpressaoRelacional;
 	public TermoRelacionalElements getTermoRelacionalAccess() {
 		return pTermoRelacional;
 	}
@@ -957,7 +1146,8 @@ public class JlanguageGrammarAccess extends AbstractElementFinder.AbstractGramma
 		return getTermoRelacionalAccess().getRule();
 	}
 	
-	//TermoComparacaoRelacional : expr1=ExpressaoAritmetica opRel=OpRel expr2=ExpressaoAritmetica;
+	//TermoComparacaoRelacional:
+	//    expr1=ExpressaoAritmetica opRel=OpRel expr2=ExpressaoAritmetica;
 	public TermoComparacaoRelacionalElements getTermoComparacaoRelacionalAccess() {
 		return pTermoComparacaoRelacional;
 	}
@@ -966,7 +1156,8 @@ public class JlanguageGrammarAccess extends AbstractElementFinder.AbstractGramma
 		return getTermoComparacaoRelacionalAccess().getRule();
 	}
 	
-	//TermoSubExpressaoRelacional : '[' expRel=ExpressaoRelacional ']';
+	//TermoSubExpressaoRelacional:
+	//    '[' expRel=ExpressaoRelacional ']';
 	public TermoSubExpressaoRelacionalElements getTermoSubExpressaoRelacionalAccess() {
 		return pTermoSubExpressaoRelacional;
 	}
@@ -975,7 +1166,8 @@ public class JlanguageGrammarAccess extends AbstractElementFinder.AbstractGramma
 		return getTermoSubExpressaoRelacionalAccess().getRule();
 	}
 	
-	//Comando : ComandoAtibuicao | ComandoEntrada | ComandoSaida | ComandoCondicao | ComandoRepeticao | ComandoSubAlgoritmo;
+	//Comando:
+	//    ComandoAtibuicao | ComandoEntrada | ComandoSaida | ComandoCondicao | ComandoRepeticao | ComandoSubAlgoritmo;
 	public ComandoElements getComandoAccess() {
 		return pComando;
 	}
@@ -984,7 +1176,8 @@ public class JlanguageGrammarAccess extends AbstractElementFinder.AbstractGramma
 		return getComandoAccess().getRule();
 	}
 	
-	//ComandoAtibuicao : 'ATRIBUIR' exp=ExpressaoAritmetica 'A' variavel=[Declaracao];
+	//ComandoAtibuicao:
+	//    'ATRIBUIR' exp=ExpressaoAritmetica 'A' variavel=[Declaracao];
 	public ComandoAtibuicaoElements getComandoAtibuicaoAccess() {
 		return pComandoAtibuicao;
 	}
@@ -993,7 +1186,8 @@ public class JlanguageGrammarAccess extends AbstractElementFinder.AbstractGramma
 		return getComandoAtibuicaoAccess().getRule();
 	}
 	
-	//ComandoEntrada : 'LER' variavel=[Declaracao];
+	//ComandoEntrada:
+	//    'LEIA' variavel=[Declaracao];
 	public ComandoEntradaElements getComandoEntradaAccess() {
 		return pComandoEntrada;
 	}
@@ -1002,7 +1196,8 @@ public class JlanguageGrammarAccess extends AbstractElementFinder.AbstractGramma
 		return getComandoEntradaAccess().getRule();
 	}
 	
-	//ComandoSaida : 'IMPRIMIR' variavel=[Declaracao];
+	//ComandoSaida:
+	//    'PRINT' variavel=[Declaracao];
 	public ComandoSaidaElements getComandoSaidaAccess() {
 		return pComandoSaida;
 	}
@@ -1011,7 +1206,8 @@ public class JlanguageGrammarAccess extends AbstractElementFinder.AbstractGramma
 		return getComandoSaidaAccess().getRule();
 	}
 	
-	//ComandoCondicao : 'SE' exp=ExpressaoRelacional 'ENTAO' cmd1=Comando ('SENAO' cmd2=Comando)?;
+	//ComandoCondicao:
+	//    'SE' exp=ExpressaoRelacional 'ENTAO' cmd1=Comando ('SENAO' cmd2=Comando)?;
 	public ComandoCondicaoElements getComandoCondicaoAccess() {
 		return pComandoCondicao;
 	}
@@ -1020,7 +1216,8 @@ public class JlanguageGrammarAccess extends AbstractElementFinder.AbstractGramma
 		return getComandoCondicaoAccess().getRule();
 	}
 	
-	//ComandoRepeticao : 'ENQUANTO' exp=ExpressaoRelacional cmd=Comando;
+	//ComandoRepeticao:
+	//    'ENQUANTO' exp=ExpressaoRelacional cmd=Comando;
 	public ComandoRepeticaoElements getComandoRepeticaoAccess() {
 		return pComandoRepeticao;
 	}
@@ -1029,7 +1226,8 @@ public class JlanguageGrammarAccess extends AbstractElementFinder.AbstractGramma
 		return getComandoRepeticaoAccess().getRule();
 	}
 	
-	//ComandoSubAlgoritmo : 'INICIO' (comandos+=Comando)+ 'FIM';
+	//ComandoSubAlgoritmo:
+	//    'INICIO' (comandos+=Comando)+ 'FIM';
 	public ComandoSubAlgoritmoElements getComandoSubAlgoritmoAccess() {
 		return pComandoSubAlgoritmo;
 	}
@@ -1038,7 +1236,28 @@ public class JlanguageGrammarAccess extends AbstractElementFinder.AbstractGramma
 		return getComandoSubAlgoritmoAccess().getRule();
 	}
 	
-	//TipoVar : 'INTEIRO' | 'REAL';
+	//ChamadaFuncao:
+	//    name=ID '(' (argumentos+=ExpressaoAritmetica (',' argumentos+=ExpressaoAritmetica)*)? ')';
+	public ChamadaFuncaoElements getChamadaFuncaoAccess() {
+		return pChamadaFuncao;
+	}
+	
+	public ParserRule getChamadaFuncaoRule() {
+		return getChamadaFuncaoAccess().getRule();
+	}
+	
+	//Funcao:
+	//    'FUNCAO' name=ID '(' (parametros+=Declaracao (',' parametros+=Declaracao)*)? ')' ':' tipo=TipoVar comandos=Comando;
+	public FuncaoElements getFuncaoAccess() {
+		return pFuncao;
+	}
+	
+	public ParserRule getFuncaoRule() {
+		return getFuncaoAccess().getRule();
+	}
+	
+	//TipoVar:
+	//    'INTEIRO' | 'REAL' | 'TEXTO' | 'BOOLEANO';
 	public TipoVarElements getTipoVarAccess() {
 		return pTipoVar;
 	}
@@ -1047,7 +1266,8 @@ public class JlanguageGrammarAccess extends AbstractElementFinder.AbstractGramma
 		return getTipoVarAccess().getRule();
 	}
 	
-	//OpArit1 : '+' | '-';
+	//OpArit1:
+	//    '+' | '-';
 	public OpArit1Elements getOpArit1Access() {
 		return pOpArit1;
 	}
@@ -1056,7 +1276,8 @@ public class JlanguageGrammarAccess extends AbstractElementFinder.AbstractGramma
 		return getOpArit1Access().getRule();
 	}
 	
-	//OpArit2 : '*' | '/';
+	//OpArit2:
+	//    '*' | '/';
 	public OpArit2Elements getOpArit2Access() {
 		return pOpArit2;
 	}
@@ -1065,7 +1286,8 @@ public class JlanguageGrammarAccess extends AbstractElementFinder.AbstractGramma
 		return getOpArit2Access().getRule();
 	}
 	
-	//OpRel : '>' | '>=' | '<' | '<=' | '<>' | '=';
+	//OpRel:
+	//    '>' | '>=' | '<' | '<=' | '<>' | '=';
 	public OpRelElements getOpRelAccess() {
 		return pOpRel;
 	}
@@ -1074,7 +1296,8 @@ public class JlanguageGrammarAccess extends AbstractElementFinder.AbstractGramma
 		return getOpRelAccess().getRule();
 	}
 	
-	//OpBool : 'E' | 'OU';
+	//OpBool:
+	//    'E' | 'OU';
 	public OpBoolElements getOpBoolAccess() {
 		return pOpBool;
 	}

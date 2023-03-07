@@ -21,33 +21,18 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalJlanguageParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "':'", "'DECLARACOES'", "'ALGORITMO'", "'('", "')'", "'['", "']'", "'ATRIBUIR'", "'A'", "'LER'", "'IMPRIMIR'", "'SE'", "'ENTAO'", "'SENAO'", "'ENQUANTO'", "'INICIO'", "'FIM'", "'INTEIRO'", "'REAL'", "'+'", "'-'", "'*'", "'/'", "'>'", "'>='", "'<'", "'<='", "'<>'", "'='", "'E'", "'OU'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "':'", "'VARIAVEIS'", "'CODIGO'", "'('", "')'", "'['", "']'", "'ATRIBUIR'", "'A'", "'LEIA'", "'PRINT'", "'SE'", "'ENTAO'", "'SENAO'", "'ENQUANTO'", "'INICIO'", "'FIM'", "'INTEIRO'", "'REAL'", "'TEXTO'", "'BOOLEANO'", "'+'", "'-'", "'*'", "'/'", "'>'", "'>='", "'<'", "'<='", "'<>'", "'='", "'E'", "'OU'"
     };
-    public static final int RULE_STRING=6;
-    public static final int RULE_SL_COMMENT=8;
     public static final int T__19=19;
     public static final int T__15=15;
-    public static final int T__37=37;
     public static final int T__16=16;
-    public static final int T__38=38;
     public static final int T__17=17;
-    public static final int T__39=39;
     public static final int T__18=18;
     public static final int T__11=11;
-    public static final int T__33=33;
     public static final int T__12=12;
-    public static final int T__34=34;
     public static final int T__13=13;
-    public static final int T__35=35;
     public static final int T__14=14;
-    public static final int T__36=36;
-    public static final int EOF=-1;
-    public static final int T__30=30;
-    public static final int T__31=31;
-    public static final int T__32=32;
     public static final int RULE_ID=4;
-    public static final int RULE_WS=9;
-    public static final int RULE_ANY_OTHER=10;
     public static final int T__26=26;
     public static final int T__27=27;
     public static final int T__28=28;
@@ -58,10 +43,27 @@ public class InternalJlanguageParser extends AbstractInternalAntlrParser {
     public static final int T__23=23;
     public static final int T__24=24;
     public static final int T__25=25;
-    public static final int T__40=40;
-    public static final int T__41=41;
     public static final int T__20=20;
     public static final int T__21=21;
+    public static final int RULE_STRING=6;
+    public static final int RULE_SL_COMMENT=8;
+    public static final int T__37=37;
+    public static final int T__38=38;
+    public static final int T__39=39;
+    public static final int T__33=33;
+    public static final int T__34=34;
+    public static final int T__35=35;
+    public static final int T__36=36;
+    public static final int EOF=-1;
+    public static final int T__30=30;
+    public static final int T__31=31;
+    public static final int T__32=32;
+    public static final int RULE_WS=9;
+    public static final int RULE_ANY_OTHER=10;
+    public static final int T__40=40;
+    public static final int T__41=41;
+    public static final int T__42=42;
+    public static final int T__43=43;
 
     // delegates
     // delegators
@@ -139,7 +141,7 @@ public class InternalJlanguageParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePrograma"
-    // InternalJlanguage.g:71:1: rulePrograma returns [EObject current=null] : (otherlv_0= ':' otherlv_1= 'DECLARACOES' ( (lv_declaracoes_2_0= ruleDeclaracao ) )+ otherlv_3= ':' otherlv_4= 'ALGORITMO' ( (lv_comandos_5_0= ruleComando ) )+ ) ;
+    // InternalJlanguage.g:71:1: rulePrograma returns [EObject current=null] : (otherlv_0= ':' otherlv_1= 'VARIAVEIS' ( (lv_declaracoes_2_0= ruleDeclaracao ) )+ otherlv_3= ':' otherlv_4= 'CODIGO' ( (lv_comandos_5_0= ruleComando ) )+ ) ;
     public final EObject rulePrograma() throws RecognitionException {
         EObject current = null;
 
@@ -156,11 +158,11 @@ public class InternalJlanguageParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalJlanguage.g:77:2: ( (otherlv_0= ':' otherlv_1= 'DECLARACOES' ( (lv_declaracoes_2_0= ruleDeclaracao ) )+ otherlv_3= ':' otherlv_4= 'ALGORITMO' ( (lv_comandos_5_0= ruleComando ) )+ ) )
-            // InternalJlanguage.g:78:2: (otherlv_0= ':' otherlv_1= 'DECLARACOES' ( (lv_declaracoes_2_0= ruleDeclaracao ) )+ otherlv_3= ':' otherlv_4= 'ALGORITMO' ( (lv_comandos_5_0= ruleComando ) )+ )
+            // InternalJlanguage.g:77:2: ( (otherlv_0= ':' otherlv_1= 'VARIAVEIS' ( (lv_declaracoes_2_0= ruleDeclaracao ) )+ otherlv_3= ':' otherlv_4= 'CODIGO' ( (lv_comandos_5_0= ruleComando ) )+ ) )
+            // InternalJlanguage.g:78:2: (otherlv_0= ':' otherlv_1= 'VARIAVEIS' ( (lv_declaracoes_2_0= ruleDeclaracao ) )+ otherlv_3= ':' otherlv_4= 'CODIGO' ( (lv_comandos_5_0= ruleComando ) )+ )
             {
-            // InternalJlanguage.g:78:2: (otherlv_0= ':' otherlv_1= 'DECLARACOES' ( (lv_declaracoes_2_0= ruleDeclaracao ) )+ otherlv_3= ':' otherlv_4= 'ALGORITMO' ( (lv_comandos_5_0= ruleComando ) )+ )
-            // InternalJlanguage.g:79:3: otherlv_0= ':' otherlv_1= 'DECLARACOES' ( (lv_declaracoes_2_0= ruleDeclaracao ) )+ otherlv_3= ':' otherlv_4= 'ALGORITMO' ( (lv_comandos_5_0= ruleComando ) )+
+            // InternalJlanguage.g:78:2: (otherlv_0= ':' otherlv_1= 'VARIAVEIS' ( (lv_declaracoes_2_0= ruleDeclaracao ) )+ otherlv_3= ':' otherlv_4= 'CODIGO' ( (lv_comandos_5_0= ruleComando ) )+ )
+            // InternalJlanguage.g:79:3: otherlv_0= ':' otherlv_1= 'VARIAVEIS' ( (lv_declaracoes_2_0= ruleDeclaracao ) )+ otherlv_3= ':' otherlv_4= 'CODIGO' ( (lv_comandos_5_0= ruleComando ) )+
             {
             otherlv_0=(Token)match(input,11,FOLLOW_3); 
 
@@ -168,7 +170,7 @@ public class InternalJlanguageParser extends AbstractInternalAntlrParser {
             		
             otherlv_1=(Token)match(input,12,FOLLOW_4); 
 
-            			newLeafNode(otherlv_1, grammarAccess.getProgramaAccess().getDECLARACOESKeyword_1());
+            			newLeafNode(otherlv_1, grammarAccess.getProgramaAccess().getVARIAVEISKeyword_1());
             		
             // InternalJlanguage.g:87:3: ( (lv_declaracoes_2_0= ruleDeclaracao ) )+
             int cnt1=0;
@@ -230,7 +232,7 @@ public class InternalJlanguageParser extends AbstractInternalAntlrParser {
             		
             otherlv_4=(Token)match(input,13,FOLLOW_7); 
 
-            			newLeafNode(otherlv_4, grammarAccess.getProgramaAccess().getALGORITMOKeyword_4());
+            			newLeafNode(otherlv_4, grammarAccess.getProgramaAccess().getCODIGOKeyword_4());
             		
             // InternalJlanguage.g:114:3: ( (lv_comandos_5_0= ruleComando ) )+
             int cnt2=0;
@@ -540,7 +542,7 @@ public class InternalJlanguageParser extends AbstractInternalAntlrParser {
                 int alt3=2;
                 int LA3_0 = input.LA(1);
 
-                if ( ((LA3_0>=30 && LA3_0<=31)) ) {
+                if ( ((LA3_0>=32 && LA3_0<=33)) ) {
                     alt3=1;
                 }
 
@@ -838,7 +840,7 @@ public class InternalJlanguageParser extends AbstractInternalAntlrParser {
                 int alt4=2;
                 int LA4_0 = input.LA(1);
 
-                if ( ((LA4_0>=32 && LA4_0<=33)) ) {
+                if ( ((LA4_0>=34 && LA4_0<=35)) ) {
                     alt4=1;
                 }
 
@@ -1595,7 +1597,7 @@ public class InternalJlanguageParser extends AbstractInternalAntlrParser {
                 int alt6=2;
                 int LA6_0 = input.LA(1);
 
-                if ( ((LA6_0>=40 && LA6_0<=41)) ) {
+                if ( ((LA6_0>=42 && LA6_0<=43)) ) {
                     alt6=1;
                 }
 
@@ -2626,7 +2628,7 @@ public class InternalJlanguageParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleComandoEntrada"
-    // InternalJlanguage.g:991:1: ruleComandoEntrada returns [EObject current=null] : (otherlv_0= 'LER' ( (otherlv_1= RULE_ID ) ) ) ;
+    // InternalJlanguage.g:991:1: ruleComandoEntrada returns [EObject current=null] : (otherlv_0= 'LEIA' ( (otherlv_1= RULE_ID ) ) ) ;
     public final EObject ruleComandoEntrada() throws RecognitionException {
         EObject current = null;
 
@@ -2637,15 +2639,15 @@ public class InternalJlanguageParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalJlanguage.g:997:2: ( (otherlv_0= 'LER' ( (otherlv_1= RULE_ID ) ) ) )
-            // InternalJlanguage.g:998:2: (otherlv_0= 'LER' ( (otherlv_1= RULE_ID ) ) )
+            // InternalJlanguage.g:997:2: ( (otherlv_0= 'LEIA' ( (otherlv_1= RULE_ID ) ) ) )
+            // InternalJlanguage.g:998:2: (otherlv_0= 'LEIA' ( (otherlv_1= RULE_ID ) ) )
             {
-            // InternalJlanguage.g:998:2: (otherlv_0= 'LER' ( (otherlv_1= RULE_ID ) ) )
-            // InternalJlanguage.g:999:3: otherlv_0= 'LER' ( (otherlv_1= RULE_ID ) )
+            // InternalJlanguage.g:998:2: (otherlv_0= 'LEIA' ( (otherlv_1= RULE_ID ) ) )
+            // InternalJlanguage.g:999:3: otherlv_0= 'LEIA' ( (otherlv_1= RULE_ID ) )
             {
             otherlv_0=(Token)match(input,20,FOLLOW_4); 
 
-            			newLeafNode(otherlv_0, grammarAccess.getComandoEntradaAccess().getLERKeyword_0());
+            			newLeafNode(otherlv_0, grammarAccess.getComandoEntradaAccess().getLEIAKeyword_0());
             		
             // InternalJlanguage.g:1003:3: ( (otherlv_1= RULE_ID ) )
             // InternalJlanguage.g:1004:4: (otherlv_1= RULE_ID )
@@ -2727,7 +2729,7 @@ public class InternalJlanguageParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleComandoSaida"
-    // InternalJlanguage.g:1027:1: ruleComandoSaida returns [EObject current=null] : (otherlv_0= 'IMPRIMIR' ( (otherlv_1= RULE_ID ) ) ) ;
+    // InternalJlanguage.g:1027:1: ruleComandoSaida returns [EObject current=null] : (otherlv_0= 'PRINT' ( (otherlv_1= RULE_ID ) ) ) ;
     public final EObject ruleComandoSaida() throws RecognitionException {
         EObject current = null;
 
@@ -2738,15 +2740,15 @@ public class InternalJlanguageParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalJlanguage.g:1033:2: ( (otherlv_0= 'IMPRIMIR' ( (otherlv_1= RULE_ID ) ) ) )
-            // InternalJlanguage.g:1034:2: (otherlv_0= 'IMPRIMIR' ( (otherlv_1= RULE_ID ) ) )
+            // InternalJlanguage.g:1033:2: ( (otherlv_0= 'PRINT' ( (otherlv_1= RULE_ID ) ) ) )
+            // InternalJlanguage.g:1034:2: (otherlv_0= 'PRINT' ( (otherlv_1= RULE_ID ) ) )
             {
-            // InternalJlanguage.g:1034:2: (otherlv_0= 'IMPRIMIR' ( (otherlv_1= RULE_ID ) ) )
-            // InternalJlanguage.g:1035:3: otherlv_0= 'IMPRIMIR' ( (otherlv_1= RULE_ID ) )
+            // InternalJlanguage.g:1034:2: (otherlv_0= 'PRINT' ( (otherlv_1= RULE_ID ) ) )
+            // InternalJlanguage.g:1035:3: otherlv_0= 'PRINT' ( (otherlv_1= RULE_ID ) )
             {
             otherlv_0=(Token)match(input,21,FOLLOW_4); 
 
-            			newLeafNode(otherlv_0, grammarAccess.getComandoSaidaAccess().getIMPRIMIRKeyword_0());
+            			newLeafNode(otherlv_0, grammarAccess.getComandoSaidaAccess().getPRINTKeyword_0());
             		
             // InternalJlanguage.g:1039:3: ( (otherlv_1= RULE_ID ) )
             // InternalJlanguage.g:1040:4: (otherlv_1= RULE_ID )
@@ -3318,7 +3320,7 @@ public class InternalJlanguageParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTipoVar"
-    // InternalJlanguage.g:1260:1: ruleTipoVar returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'INTEIRO' | kw= 'REAL' ) ;
+    // InternalJlanguage.g:1260:1: ruleTipoVar returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'INTEIRO' | kw= 'REAL' | kw= 'TEXTO' | kw= 'BOOLEANO' ) ;
     public final AntlrDatatypeRuleToken ruleTipoVar() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -3328,25 +3330,39 @@ public class InternalJlanguageParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalJlanguage.g:1266:2: ( (kw= 'INTEIRO' | kw= 'REAL' ) )
-            // InternalJlanguage.g:1267:2: (kw= 'INTEIRO' | kw= 'REAL' )
+            // InternalJlanguage.g:1266:2: ( (kw= 'INTEIRO' | kw= 'REAL' | kw= 'TEXTO' | kw= 'BOOLEANO' ) )
+            // InternalJlanguage.g:1267:2: (kw= 'INTEIRO' | kw= 'REAL' | kw= 'TEXTO' | kw= 'BOOLEANO' )
             {
-            // InternalJlanguage.g:1267:2: (kw= 'INTEIRO' | kw= 'REAL' )
-            int alt11=2;
-            int LA11_0 = input.LA(1);
-
-            if ( (LA11_0==28) ) {
+            // InternalJlanguage.g:1267:2: (kw= 'INTEIRO' | kw= 'REAL' | kw= 'TEXTO' | kw= 'BOOLEANO' )
+            int alt11=4;
+            switch ( input.LA(1) ) {
+            case 28:
+                {
                 alt11=1;
-            }
-            else if ( (LA11_0==29) ) {
+                }
+                break;
+            case 29:
+                {
                 alt11=2;
-            }
-            else {
+                }
+                break;
+            case 30:
+                {
+                alt11=3;
+                }
+                break;
+            case 31:
+                {
+                alt11=4;
+                }
+                break;
+            default:
                 NoViableAltException nvae =
                     new NoViableAltException("", 11, 0, input);
 
                 throw nvae;
             }
+
             switch (alt11) {
                 case 1 :
                     // InternalJlanguage.g:1268:3: kw= 'INTEIRO'
@@ -3366,6 +3382,28 @@ public class InternalJlanguageParser extends AbstractInternalAntlrParser {
 
                     			current.merge(kw);
                     			newLeafNode(kw, grammarAccess.getTipoVarAccess().getREALKeyword_1());
+                    		
+
+                    }
+                    break;
+                case 3 :
+                    // InternalJlanguage.g:1280:3: kw= 'TEXTO'
+                    {
+                    kw=(Token)match(input,30,FOLLOW_2); 
+
+                    			current.merge(kw);
+                    			newLeafNode(kw, grammarAccess.getTipoVarAccess().getTEXTOKeyword_2());
+                    		
+
+                    }
+                    break;
+                case 4 :
+                    // InternalJlanguage.g:1286:3: kw= 'BOOLEANO'
+                    {
+                    kw=(Token)match(input,31,FOLLOW_2); 
+
+                    			current.merge(kw);
+                    			newLeafNode(kw, grammarAccess.getTipoVarAccess().getBOOLEANOKeyword_3());
                     		
 
                     }
@@ -3393,7 +3431,7 @@ public class InternalJlanguageParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleOpArit1"
-    // InternalJlanguage.g:1283:1: entryRuleOpArit1 returns [String current=null] : iv_ruleOpArit1= ruleOpArit1 EOF ;
+    // InternalJlanguage.g:1295:1: entryRuleOpArit1 returns [String current=null] : iv_ruleOpArit1= ruleOpArit1 EOF ;
     public final String entryRuleOpArit1() throws RecognitionException {
         String current = null;
 
@@ -3401,8 +3439,8 @@ public class InternalJlanguageParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalJlanguage.g:1283:47: (iv_ruleOpArit1= ruleOpArit1 EOF )
-            // InternalJlanguage.g:1284:2: iv_ruleOpArit1= ruleOpArit1 EOF
+            // InternalJlanguage.g:1295:47: (iv_ruleOpArit1= ruleOpArit1 EOF )
+            // InternalJlanguage.g:1296:2: iv_ruleOpArit1= ruleOpArit1 EOF
             {
              newCompositeNode(grammarAccess.getOpArit1Rule()); 
             pushFollow(FOLLOW_1);
@@ -3429,7 +3467,7 @@ public class InternalJlanguageParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleOpArit1"
-    // InternalJlanguage.g:1290:1: ruleOpArit1 returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= '+' | kw= '-' ) ;
+    // InternalJlanguage.g:1302:1: ruleOpArit1 returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= '+' | kw= '-' ) ;
     public final AntlrDatatypeRuleToken ruleOpArit1() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -3439,17 +3477,17 @@ public class InternalJlanguageParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalJlanguage.g:1296:2: ( (kw= '+' | kw= '-' ) )
-            // InternalJlanguage.g:1297:2: (kw= '+' | kw= '-' )
+            // InternalJlanguage.g:1308:2: ( (kw= '+' | kw= '-' ) )
+            // InternalJlanguage.g:1309:2: (kw= '+' | kw= '-' )
             {
-            // InternalJlanguage.g:1297:2: (kw= '+' | kw= '-' )
+            // InternalJlanguage.g:1309:2: (kw= '+' | kw= '-' )
             int alt12=2;
             int LA12_0 = input.LA(1);
 
-            if ( (LA12_0==30) ) {
+            if ( (LA12_0==32) ) {
                 alt12=1;
             }
-            else if ( (LA12_0==31) ) {
+            else if ( (LA12_0==33) ) {
                 alt12=2;
             }
             else {
@@ -3460,9 +3498,9 @@ public class InternalJlanguageParser extends AbstractInternalAntlrParser {
             }
             switch (alt12) {
                 case 1 :
-                    // InternalJlanguage.g:1298:3: kw= '+'
+                    // InternalJlanguage.g:1310:3: kw= '+'
                     {
-                    kw=(Token)match(input,30,FOLLOW_2); 
+                    kw=(Token)match(input,32,FOLLOW_2); 
 
                     			current.merge(kw);
                     			newLeafNode(kw, grammarAccess.getOpArit1Access().getPlusSignKeyword_0());
@@ -3471,9 +3509,9 @@ public class InternalJlanguageParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalJlanguage.g:1304:3: kw= '-'
+                    // InternalJlanguage.g:1316:3: kw= '-'
                     {
-                    kw=(Token)match(input,31,FOLLOW_2); 
+                    kw=(Token)match(input,33,FOLLOW_2); 
 
                     			current.merge(kw);
                     			newLeafNode(kw, grammarAccess.getOpArit1Access().getHyphenMinusKeyword_1());
@@ -3504,7 +3542,7 @@ public class InternalJlanguageParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleOpArit2"
-    // InternalJlanguage.g:1313:1: entryRuleOpArit2 returns [String current=null] : iv_ruleOpArit2= ruleOpArit2 EOF ;
+    // InternalJlanguage.g:1325:1: entryRuleOpArit2 returns [String current=null] : iv_ruleOpArit2= ruleOpArit2 EOF ;
     public final String entryRuleOpArit2() throws RecognitionException {
         String current = null;
 
@@ -3512,8 +3550,8 @@ public class InternalJlanguageParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalJlanguage.g:1313:47: (iv_ruleOpArit2= ruleOpArit2 EOF )
-            // InternalJlanguage.g:1314:2: iv_ruleOpArit2= ruleOpArit2 EOF
+            // InternalJlanguage.g:1325:47: (iv_ruleOpArit2= ruleOpArit2 EOF )
+            // InternalJlanguage.g:1326:2: iv_ruleOpArit2= ruleOpArit2 EOF
             {
              newCompositeNode(grammarAccess.getOpArit2Rule()); 
             pushFollow(FOLLOW_1);
@@ -3540,7 +3578,7 @@ public class InternalJlanguageParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleOpArit2"
-    // InternalJlanguage.g:1320:1: ruleOpArit2 returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= '*' | kw= '/' ) ;
+    // InternalJlanguage.g:1332:1: ruleOpArit2 returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= '*' | kw= '/' ) ;
     public final AntlrDatatypeRuleToken ruleOpArit2() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -3550,17 +3588,17 @@ public class InternalJlanguageParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalJlanguage.g:1326:2: ( (kw= '*' | kw= '/' ) )
-            // InternalJlanguage.g:1327:2: (kw= '*' | kw= '/' )
+            // InternalJlanguage.g:1338:2: ( (kw= '*' | kw= '/' ) )
+            // InternalJlanguage.g:1339:2: (kw= '*' | kw= '/' )
             {
-            // InternalJlanguage.g:1327:2: (kw= '*' | kw= '/' )
+            // InternalJlanguage.g:1339:2: (kw= '*' | kw= '/' )
             int alt13=2;
             int LA13_0 = input.LA(1);
 
-            if ( (LA13_0==32) ) {
+            if ( (LA13_0==34) ) {
                 alt13=1;
             }
-            else if ( (LA13_0==33) ) {
+            else if ( (LA13_0==35) ) {
                 alt13=2;
             }
             else {
@@ -3571,9 +3609,9 @@ public class InternalJlanguageParser extends AbstractInternalAntlrParser {
             }
             switch (alt13) {
                 case 1 :
-                    // InternalJlanguage.g:1328:3: kw= '*'
+                    // InternalJlanguage.g:1340:3: kw= '*'
                     {
-                    kw=(Token)match(input,32,FOLLOW_2); 
+                    kw=(Token)match(input,34,FOLLOW_2); 
 
                     			current.merge(kw);
                     			newLeafNode(kw, grammarAccess.getOpArit2Access().getAsteriskKeyword_0());
@@ -3582,9 +3620,9 @@ public class InternalJlanguageParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalJlanguage.g:1334:3: kw= '/'
+                    // InternalJlanguage.g:1346:3: kw= '/'
                     {
-                    kw=(Token)match(input,33,FOLLOW_2); 
+                    kw=(Token)match(input,35,FOLLOW_2); 
 
                     			current.merge(kw);
                     			newLeafNode(kw, grammarAccess.getOpArit2Access().getSolidusKeyword_1());
@@ -3615,7 +3653,7 @@ public class InternalJlanguageParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleOpRel"
-    // InternalJlanguage.g:1343:1: entryRuleOpRel returns [String current=null] : iv_ruleOpRel= ruleOpRel EOF ;
+    // InternalJlanguage.g:1355:1: entryRuleOpRel returns [String current=null] : iv_ruleOpRel= ruleOpRel EOF ;
     public final String entryRuleOpRel() throws RecognitionException {
         String current = null;
 
@@ -3623,8 +3661,8 @@ public class InternalJlanguageParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalJlanguage.g:1343:45: (iv_ruleOpRel= ruleOpRel EOF )
-            // InternalJlanguage.g:1344:2: iv_ruleOpRel= ruleOpRel EOF
+            // InternalJlanguage.g:1355:45: (iv_ruleOpRel= ruleOpRel EOF )
+            // InternalJlanguage.g:1356:2: iv_ruleOpRel= ruleOpRel EOF
             {
              newCompositeNode(grammarAccess.getOpRelRule()); 
             pushFollow(FOLLOW_1);
@@ -3651,7 +3689,7 @@ public class InternalJlanguageParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleOpRel"
-    // InternalJlanguage.g:1350:1: ruleOpRel returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= '>' | kw= '>=' | kw= '<' | kw= '<=' | kw= '<>' | kw= '=' ) ;
+    // InternalJlanguage.g:1362:1: ruleOpRel returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= '>' | kw= '>=' | kw= '<' | kw= '<=' | kw= '<>' | kw= '=' ) ;
     public final AntlrDatatypeRuleToken ruleOpRel() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -3661,38 +3699,38 @@ public class InternalJlanguageParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalJlanguage.g:1356:2: ( (kw= '>' | kw= '>=' | kw= '<' | kw= '<=' | kw= '<>' | kw= '=' ) )
-            // InternalJlanguage.g:1357:2: (kw= '>' | kw= '>=' | kw= '<' | kw= '<=' | kw= '<>' | kw= '=' )
+            // InternalJlanguage.g:1368:2: ( (kw= '>' | kw= '>=' | kw= '<' | kw= '<=' | kw= '<>' | kw= '=' ) )
+            // InternalJlanguage.g:1369:2: (kw= '>' | kw= '>=' | kw= '<' | kw= '<=' | kw= '<>' | kw= '=' )
             {
-            // InternalJlanguage.g:1357:2: (kw= '>' | kw= '>=' | kw= '<' | kw= '<=' | kw= '<>' | kw= '=' )
+            // InternalJlanguage.g:1369:2: (kw= '>' | kw= '>=' | kw= '<' | kw= '<=' | kw= '<>' | kw= '=' )
             int alt14=6;
             switch ( input.LA(1) ) {
-            case 34:
+            case 36:
                 {
                 alt14=1;
                 }
                 break;
-            case 35:
+            case 37:
                 {
                 alt14=2;
                 }
                 break;
-            case 36:
+            case 38:
                 {
                 alt14=3;
                 }
                 break;
-            case 37:
+            case 39:
                 {
                 alt14=4;
                 }
                 break;
-            case 38:
+            case 40:
                 {
                 alt14=5;
                 }
                 break;
-            case 39:
+            case 41:
                 {
                 alt14=6;
                 }
@@ -3706,9 +3744,9 @@ public class InternalJlanguageParser extends AbstractInternalAntlrParser {
 
             switch (alt14) {
                 case 1 :
-                    // InternalJlanguage.g:1358:3: kw= '>'
+                    // InternalJlanguage.g:1370:3: kw= '>'
                     {
-                    kw=(Token)match(input,34,FOLLOW_2); 
+                    kw=(Token)match(input,36,FOLLOW_2); 
 
                     			current.merge(kw);
                     			newLeafNode(kw, grammarAccess.getOpRelAccess().getGreaterThanSignKeyword_0());
@@ -3717,9 +3755,9 @@ public class InternalJlanguageParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalJlanguage.g:1364:3: kw= '>='
+                    // InternalJlanguage.g:1376:3: kw= '>='
                     {
-                    kw=(Token)match(input,35,FOLLOW_2); 
+                    kw=(Token)match(input,37,FOLLOW_2); 
 
                     			current.merge(kw);
                     			newLeafNode(kw, grammarAccess.getOpRelAccess().getGreaterThanSignEqualsSignKeyword_1());
@@ -3728,9 +3766,9 @@ public class InternalJlanguageParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalJlanguage.g:1370:3: kw= '<'
+                    // InternalJlanguage.g:1382:3: kw= '<'
                     {
-                    kw=(Token)match(input,36,FOLLOW_2); 
+                    kw=(Token)match(input,38,FOLLOW_2); 
 
                     			current.merge(kw);
                     			newLeafNode(kw, grammarAccess.getOpRelAccess().getLessThanSignKeyword_2());
@@ -3739,9 +3777,9 @@ public class InternalJlanguageParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalJlanguage.g:1376:3: kw= '<='
+                    // InternalJlanguage.g:1388:3: kw= '<='
                     {
-                    kw=(Token)match(input,37,FOLLOW_2); 
+                    kw=(Token)match(input,39,FOLLOW_2); 
 
                     			current.merge(kw);
                     			newLeafNode(kw, grammarAccess.getOpRelAccess().getLessThanSignEqualsSignKeyword_3());
@@ -3750,9 +3788,9 @@ public class InternalJlanguageParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // InternalJlanguage.g:1382:3: kw= '<>'
+                    // InternalJlanguage.g:1394:3: kw= '<>'
                     {
-                    kw=(Token)match(input,38,FOLLOW_2); 
+                    kw=(Token)match(input,40,FOLLOW_2); 
 
                     			current.merge(kw);
                     			newLeafNode(kw, grammarAccess.getOpRelAccess().getLessThanSignGreaterThanSignKeyword_4());
@@ -3761,9 +3799,9 @@ public class InternalJlanguageParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 6 :
-                    // InternalJlanguage.g:1388:3: kw= '='
+                    // InternalJlanguage.g:1400:3: kw= '='
                     {
-                    kw=(Token)match(input,39,FOLLOW_2); 
+                    kw=(Token)match(input,41,FOLLOW_2); 
 
                     			current.merge(kw);
                     			newLeafNode(kw, grammarAccess.getOpRelAccess().getEqualsSignKeyword_5());
@@ -3794,7 +3832,7 @@ public class InternalJlanguageParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleOpBool"
-    // InternalJlanguage.g:1397:1: entryRuleOpBool returns [String current=null] : iv_ruleOpBool= ruleOpBool EOF ;
+    // InternalJlanguage.g:1409:1: entryRuleOpBool returns [String current=null] : iv_ruleOpBool= ruleOpBool EOF ;
     public final String entryRuleOpBool() throws RecognitionException {
         String current = null;
 
@@ -3802,8 +3840,8 @@ public class InternalJlanguageParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalJlanguage.g:1397:46: (iv_ruleOpBool= ruleOpBool EOF )
-            // InternalJlanguage.g:1398:2: iv_ruleOpBool= ruleOpBool EOF
+            // InternalJlanguage.g:1409:46: (iv_ruleOpBool= ruleOpBool EOF )
+            // InternalJlanguage.g:1410:2: iv_ruleOpBool= ruleOpBool EOF
             {
              newCompositeNode(grammarAccess.getOpBoolRule()); 
             pushFollow(FOLLOW_1);
@@ -3830,7 +3868,7 @@ public class InternalJlanguageParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleOpBool"
-    // InternalJlanguage.g:1404:1: ruleOpBool returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'E' | kw= 'OU' ) ;
+    // InternalJlanguage.g:1416:1: ruleOpBool returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'E' | kw= 'OU' ) ;
     public final AntlrDatatypeRuleToken ruleOpBool() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -3840,17 +3878,17 @@ public class InternalJlanguageParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalJlanguage.g:1410:2: ( (kw= 'E' | kw= 'OU' ) )
-            // InternalJlanguage.g:1411:2: (kw= 'E' | kw= 'OU' )
+            // InternalJlanguage.g:1422:2: ( (kw= 'E' | kw= 'OU' ) )
+            // InternalJlanguage.g:1423:2: (kw= 'E' | kw= 'OU' )
             {
-            // InternalJlanguage.g:1411:2: (kw= 'E' | kw= 'OU' )
+            // InternalJlanguage.g:1423:2: (kw= 'E' | kw= 'OU' )
             int alt15=2;
             int LA15_0 = input.LA(1);
 
-            if ( (LA15_0==40) ) {
+            if ( (LA15_0==42) ) {
                 alt15=1;
             }
-            else if ( (LA15_0==41) ) {
+            else if ( (LA15_0==43) ) {
                 alt15=2;
             }
             else {
@@ -3861,9 +3899,9 @@ public class InternalJlanguageParser extends AbstractInternalAntlrParser {
             }
             switch (alt15) {
                 case 1 :
-                    // InternalJlanguage.g:1412:3: kw= 'E'
+                    // InternalJlanguage.g:1424:3: kw= 'E'
                     {
-                    kw=(Token)match(input,40,FOLLOW_2); 
+                    kw=(Token)match(input,42,FOLLOW_2); 
 
                     			current.merge(kw);
                     			newLeafNode(kw, grammarAccess.getOpBoolAccess().getEKeyword_0());
@@ -3872,9 +3910,9 @@ public class InternalJlanguageParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalJlanguage.g:1418:3: kw= 'OU'
+                    // InternalJlanguage.g:1430:3: kw= 'OU'
                     {
-                    kw=(Token)match(input,41,FOLLOW_2); 
+                    kw=(Token)match(input,43,FOLLOW_2); 
 
                     			current.merge(kw);
                     			newLeafNode(kw, grammarAccess.getOpBoolAccess().getOUKeyword_1());
@@ -3917,14 +3955,14 @@ public class InternalJlanguageParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000006740000L});
     public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000006740002L});
     public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000000800L});
-    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000030000000L});
-    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x00000000C0000002L});
+    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x00000000F0000000L});
+    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000300000002L});
     public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000004030L});
-    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000300000002L});
+    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000C00000002L});
     public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000008000L});
-    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000030000000002L});
+    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x00000C0000000002L});
     public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000000014030L});
-    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x000000FC00000000L});
+    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x000003F000000000L});
     public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000000020000L});
     public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000000080000L});
     public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000000800000L});

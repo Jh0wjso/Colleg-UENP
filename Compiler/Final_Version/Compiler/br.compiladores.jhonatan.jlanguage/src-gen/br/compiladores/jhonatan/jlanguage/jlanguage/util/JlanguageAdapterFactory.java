@@ -186,6 +186,16 @@ public class JlanguageAdapterFactory extends AdapterFactoryImpl
         return createComandoSubAlgoritmoAdapter();
       }
       @Override
+      public Adapter caseChamadaFuncao(ChamadaFuncao object)
+      {
+        return createChamadaFuncaoAdapter();
+      }
+      @Override
+      public Adapter caseFuncao(Funcao object)
+      {
+        return createFuncaoAdapter();
+      }
+      @Override
       public Adapter defaultCase(EObject object)
       {
         return createEObjectAdapter();
@@ -533,6 +543,36 @@ public class JlanguageAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createComandoSubAlgoritmoAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link br.compiladores.jhonatan.jlanguage.jlanguage.ChamadaFuncao <em>Chamada Funcao</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see br.compiladores.jhonatan.jlanguage.jlanguage.ChamadaFuncao
+   * @generated
+   */
+  public Adapter createChamadaFuncaoAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link br.compiladores.jhonatan.jlanguage.jlanguage.Funcao <em>Funcao</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see br.compiladores.jhonatan.jlanguage.jlanguage.Funcao
+   * @generated
+   */
+  public Adapter createFuncaoAdapter()
   {
     return null;
   }

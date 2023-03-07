@@ -238,6 +238,20 @@ public class JlanguageSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case JlanguagePackage.CHAMADA_FUNCAO:
+      {
+        ChamadaFuncao chamadaFuncao = (ChamadaFuncao)theEObject;
+        T result = caseChamadaFuncao(chamadaFuncao);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case JlanguagePackage.FUNCAO:
+      {
+        Funcao funcao = (Funcao)theEObject;
+        T result = caseFuncao(funcao);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       default: return defaultCase(theEObject);
     }
   }
@@ -590,6 +604,38 @@ public class JlanguageSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseComandoSubAlgoritmo(ComandoSubAlgoritmo object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Chamada Funcao</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Chamada Funcao</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseChamadaFuncao(ChamadaFuncao object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Funcao</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Funcao</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseFuncao(Funcao object)
   {
     return null;
   }
