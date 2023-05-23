@@ -1,9 +1,12 @@
-
-# Image Processing Script Collection
+# 📷 Image Processing Script Collection
 
 This repository contains a collection of Python scripts for image processing, with various functionalities available. The implementation was done using the Python language, but you can adapt the code to another language of your choice if desired.
 
-## Implemented Functionalities
+# ⚠️ Alert
+
+To perform the tests, use the image paths for the code to work, feel free to play with the code.
+
+## 🔧 Implemented Functionalities
 
 ### Color Processing
 
