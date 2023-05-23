@@ -11,6 +11,6 @@ def converter_para_tons_de_cinza(caminho_imagem):
 
     return caminho_imagem_cinza
 
-caminho_imagem_colorida = '/home/jhonatan/Documentos/UENP/CG/2/carro.jpg'
+caminho_imagem_colorida = '/Computer-Graphics/2-RGB_to_Gray/carro.jpg'
 caminho_imagem_cinza = converter_para_tons_de_cinza(caminho_imagem_colorida)
 print("Caminho da imagem em tons de cinza:", caminho_imagem_cinza)

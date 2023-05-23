@@ -17,7 +17,7 @@ def filtro_mediana(imagem):
     return imagem
 
 
-caminho_imagem = '/home/jhonatan/Documentos/UENP/CG/5/pessoa.jpg'
+caminho_imagem = '/Computer-Graphics/5-Median_Filter/pessoa.jpg'
 imagem = Image.open(caminho_imagem)
 
 imagem_filtrada = filtro_mediana(imagem)

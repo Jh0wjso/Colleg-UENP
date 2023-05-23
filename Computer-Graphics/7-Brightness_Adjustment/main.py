@@ -25,7 +25,7 @@ def ajustar_brilho(caminho_imagem, fator):
 
     return caminho_imagem_ajustada
 
-caminho_imagem = '/home/jhonatan/Documentos/UENP/Colleg-UENP/Computer-Graphics/7-Brightness_Adjustment/girafa.jpeg'
+caminho_imagem = '/Computer-Graphics/7-Brightness_Adjustment/girafa.jpeg'
 fator_brilho = 2.5
 caminho_imagem_ajustada = ajustar_brilho(caminho_imagem, fator_brilho)
 print("Caminho da imagem ajustada:", caminho_imagem_ajustada)

@@ -33,21 +33,15 @@ def filtro_media(imagem, tamanho_janela):
     return nova_imagem
 
 
-# Caminho da imagem
-caminho_imagem = '/home/jhonatan/Documentos/UENP/CG/4/pessoa.jpg'
+caminho_imagem = 'Computer-Graphics/4-Mean_Filter/pessoa.jpg'
 
-# Carrega a imagem
 imagem = Image.open(caminho_imagem)
 
-# Define o tamanho da janela do filtro
 tamanho_janela = 5
 
-# Aplica o filtro da média na imagem
 imagem_filtrada = filtro_media(imagem, tamanho_janela)
 
-# Salva a imagem filtrada
 caminho_imagem_filtrada = caminho_imagem.replace('.jpg', '_filtrada.jpg')
 imagem_filtrada.save(caminho_imagem_filtrada)
 
-# Imprime o caminho da imagem filtrada
 print("Caminho da imagem filtrada:", caminho_imagem_filtrada)

@@ -23,7 +23,7 @@ def ajustar_contraste(imagem, fator):
     return imagem
 
 
-caminho_imagem = '/home/jhonatan/Documentos/UENP/Colleg-UENP/Computer-Graphics/8-Contrast_Adjustment/girafa.jpeg'
+caminho_imagem = '/Computer-Graphics/8-Contrast_Adjustment/girafa.jpeg'
 imagem = Image.open(caminho_imagem)
 
 fator_contraste = 4.5 

@@ -29,12 +29,12 @@ def gaussian_blur(image, radius):
     
     return blurred_image
 
-image_path = "/home/jhonatan/Documentos/UENP/Colleg-UENP/Computer-Graphics/4-Blur_Image/car.jpeg"
+image_path = "/Computer-Graphics/4-Blur_Image/car.jpeg"
 image = Image.open(image_path)
 
 radius = 5
 blurred_image = gaussian_blur(image, radius)
 
-output_path = "/home/jhonatan/Documentos/UENP/Colleg-UENP/Computer-Graphics/4-Blur_Image/carro_blurred.jpg"
+output_path = "/Computer-Graphics/4-Blur_Image/carro_blurred.jpg"
 blurred_image.save(output_path)
  

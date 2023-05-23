@@ -8,7 +8,7 @@ def converter_para_preto_e_branco(caminho_imagem_cinza, limiar):
 
     return caminho_imagem_pb
 
-caminho_imagem_cinza = '/home/jhonatan/Documentos/UENP/CG/3/carroCinza.jpg'
+caminho_imagem_cinza = '/Computer-Graphics/3-GRay_to_BY/carroCinza.jpg'
 limiar = 128
 caminho_imagem_pb = converter_para_preto_e_branco(caminho_imagem_cinza, limiar)
 print("Caminho da imagem em preto e branco:", caminho_imagem_pb)
