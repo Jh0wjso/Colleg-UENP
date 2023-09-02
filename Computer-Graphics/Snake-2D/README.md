@@ -18,7 +18,6 @@ Este é um jogo da cobrinha clássico criado usando HTML5, CSS3 e Javascript. Os
 ## Recursos
 
 - O jogo é criado usando HTML5, CSS3 e Javascript puro, não sendo necessário nenhuma biblioteca externa.
-- O código é bem comentado e estruturado para facilitar a compreensão e a customização.
 - A interface do jogo é simples e intuitiva para uma experiência de jogo fácil.
 
 ## Videoaula
