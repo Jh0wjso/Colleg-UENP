@@ -4,7 +4,7 @@ Este é um projeto simples de animação 3D usando a biblioteca Three.js. A anim
 
 ## Demonstração
 
-Você pode experimentar a animação ao vivo [aqui](URL_DO_SEU_PROJETO).
+Você pode experimentar a animação ao vivo [aqui]().
 
 ## Funcionalidades
 
