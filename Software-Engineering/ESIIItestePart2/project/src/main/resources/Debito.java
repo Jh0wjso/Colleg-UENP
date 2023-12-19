@@ -8,8 +8,8 @@ public class Debito {
 	
 	public boolean verificaDebito()
 	{
-	//codigo aleatorio para definir se o aluno tem débito
-	//é necessário fazer a verificação de forma persistente
+	//codigo aleatorio para definir se o aluno tem dï¿½bito
+	//ï¿½ necessï¿½rio fazer a verificaï¿½ï¿½o de forma persistente
 	if(this.codigoAluno == 4)
 		 return false;
 	 else

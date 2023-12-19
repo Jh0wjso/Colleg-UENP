@@ -8,7 +8,7 @@ public class Item {
 	Livro livro;
     Date dataDevolucao;
     
-    //Quando um item é criado, um livro é associado a ele
+    //Quando um item ï¿½ criado, um livro ï¿½ associado a ele
 	public Item(Livro livro) {
 		super();
 		this.livro = livro;
